@@ -1,0 +1,29 @@
+{
+  "name": "grommerce",
+  "version": "1.0.0",
+  "description": "GraphQL based grocery e-commerce platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reeversedev/grommerce.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "Node.js",
+    "Express.js",
+    "React.js",
+    "Apollo"
+  ],
+  "author": "reeversedev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reeversedev/grommerce/issues"
+  },
+  "homepage": "https://github.com/reeversedev/grommerce#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
