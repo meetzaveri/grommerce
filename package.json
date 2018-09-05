@@ -4,7 +4,8 @@
   "description": "GraphQL based grocery e-commerce platform",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev:server": "nodemon server.js",
+    "json:server": "json-server --watch data.json"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,11 @@
   },
   "homepage": "https://github.com/reeversedev/grommerce#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.0",
+    "json-server": "^0.14.0",
     "mongoose": "^5.2.12"
   }
 }
