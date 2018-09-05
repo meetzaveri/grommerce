@@ -1,18 +1,6 @@
 {
   "customers": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@gmail.com",
-      "age": 36
-    },
-    {
-      "id": "2",
-      "name": "Keith Wilson",
-      "email": "kieth@gmail.com",
-      "age": 50
-    },
-    {
       "id": "3",
       "name": "Tom Jones",
       "email": "tom@gmail.com",
@@ -22,7 +10,7 @@
       "id": "5",
       "name": "Jen Thompson",
       "email": "jen@gmail.com",
-      "age": 22
+      "age": 50
     },
     {
       "name": "Harry White",
@@ -33,7 +21,7 @@
     {
       "name": "Prateek Gogia",
       "email": "reeversedev@gmail.com",
-      "age": 23,
+      "age": 50,
       "id": "s~P33en"
     }
   ]
