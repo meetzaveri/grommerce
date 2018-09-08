@@ -1,4 +1,4 @@
-import { makeExecutableSchema } from "graphql-tools";
+const makeExecutableSchema = require("graphql-tools/dist/makeExecutableSchema");
 
 const TEMP_USER = {
   _id: "1",
@@ -17,13 +17,14 @@ const resolvers = {
     }
   }
 };
-export const Schema = makeExecutableSchema({
+module.exports = ("Schema",
+makeExecutableSchema({
   typeDefs,
   resolvers
-});
-export function context(headers, secrets) {
+}));
+module.exports = function context(headers, secrets) {
   return {
     headers,
     secrets
   };
-}
+};
