@@ -6,8 +6,6 @@ ENV PORT=4000
 COPY . /var/www
 WORKDIR /var/www
 
-# RUN npm install
-
 EXPOSE $PORT
 
-ENTRYPOINT ["npm", "start"]
+CMD npm start
