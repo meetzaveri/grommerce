@@ -23,7 +23,7 @@ npm i grommerce --save
 ## Why should I use this?
 [Input needed]
 
-## Roadmap & features
+## Roadmap & future features
 [Input needed]
 
 ## Limitations
