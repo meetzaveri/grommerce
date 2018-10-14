@@ -26,7 +26,7 @@ npm i grommerce --save
 ## Roadmap & future features
 [Input needed]
 
-## Limitations
+## Specializtions
 As the name suggests, this ecommerce project will only allow grocery based stocks to handle. That means we are open for grocery based ecommerce stocks. Currently we are set on this, but in future we might add another domain to support more areas.
 
 ## API docs
