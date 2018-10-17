@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  node:
+    container_name: grommerce_node_server
+    restart: always
+    build:
+      # context: ./docker/node/
+      context: ./
+      dockerfile: node.dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./:/var/www
+    
+  mongodb:
+    restart: always
+    container_name: grommerce_mongodb
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - data-volume:/data/db
+
+volumes:
+  data-volume:
