@@ -6,6 +6,9 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 
 const { Header, Content, Footer } = Layout;
 class HelloMessage extends React.Component {
+  onclick = () => {
+    console.log('gere');
+  };
   render() {
     return (
       <Layout>
