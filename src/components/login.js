@@ -4,9 +4,6 @@ import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 const FormItem = Form.Item;
 
-NormalLoginForm.propTypes = {
-  form: PropTypes.object
-};
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -47,7 +44,7 @@ class NormalLoginForm extends React.Component {
             valuePropName: 'checked',
             initialValue: true
           })(<Checkbox>Remember me</Checkbox>)}
-          <a className="login-form-forgot" href="">
+          <a className="login-form-forgot" href="#">
             Forgot password
           </a>
           <Button
@@ -57,12 +54,15 @@ class NormalLoginForm extends React.Component {
           >
             Log in
           </Button>
-          Or <a href="">register now!</a>
+          Or <a href="#">register now!</a>
         </FormItem>
       </Form>
     );
   }
 }
+NormalLoginForm.propTypes = {
+  form: PropTypes.object
+};
 
 const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 export default WrappedNormalLoginForm;
