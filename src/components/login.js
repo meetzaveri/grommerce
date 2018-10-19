@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 const FormItem = Form.Item;
 
+NormalLoginForm.propTypes = {
+  form: PropTypes.object
+};
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
