@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss';
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 
 const { Header, Content, Footer } = Layout;
 import Login from './components/login';
 import Routes from './config/routes';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 class HelloMessage extends React.Component {
   onclick = () => {
     console.log('gere');
@@ -30,11 +30,6 @@ class HelloMessage extends React.Component {
             </Menu>
           </Header>
           <Content style={{ padding: '0 50px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
               <Route exact path="/" component={'This is home'} />
               <Route path={Routes.login} component={Login} />
