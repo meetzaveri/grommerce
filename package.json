@@ -19,12 +19,15 @@
   "homepage": "https://github.com/reeversedev/grommerce#readme",
   "dependencies": {
     "antd": "^3.10.1",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
     "@babel/plugin-proposal-export-default-from": "^7.0.0",
