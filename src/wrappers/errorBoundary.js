@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const logErrorToMyService = (error, info) => {
-  console.log("Error", error, " Info", info);
+  console.log('Error', error, ' Info', info);
 };
 
 class ErrorBoundary extends Component {
@@ -27,5 +28,9 @@ class ErrorBoundary extends Component {
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired
+};
 
 export default ErrorBoundary;
