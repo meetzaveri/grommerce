@@ -8,10 +8,7 @@ const { Header, Content, Footer } = Layout;
 import Login from './components/login';
 import Routes from './config/routes';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-class HelloMessage extends React.Component {
-  onclick = () => {
-    console.log('gere');
-  };
+class Main extends React.Component {
   render() {
     return (
       <Router>
@@ -51,4 +48,4 @@ class HelloMessage extends React.Component {
 
 let App = document.getElementById('root');
 
-ReactDOM.render(<HelloMessage />, App);
+ReactDOM.render(<Main />, App);
