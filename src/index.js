@@ -8,7 +8,8 @@ class Main extends React.Component {
   render() {
     return (
       <Router>
-        <Route path={Routes.login} component={LoginSignup} />
+        {/* <Route path={Routes.login} component={LoginSignup} /> */}
+        <LoginSignup />
       </Router>
     );
   }
