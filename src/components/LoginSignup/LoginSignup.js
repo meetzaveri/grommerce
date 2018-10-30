@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Errorboundary from '../../wrappers/errorBoundary';
 
-import Login from './login';
+import Login from './Login';
 import Signup from './Signup';
 class LoginSignup extends React.Component {
   constructor(props) {
@@ -13,14 +13,6 @@ class LoginSignup extends React.Component {
   }
   handleTabClick = activeTab => {
     this.setState({ activeTab });
-  };
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
   };
 
   render() {

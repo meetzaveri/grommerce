@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import Forminput from '../components/Form/Forminput';
+import Forminput from '../../components/Form/Forminput';
 class Login extends React.Component {
   constructor(props) {
     super(props);
