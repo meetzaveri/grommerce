@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Errorboundary from '../../wrappers/errorBoundary';
-import Forminput from '../../components/Form/Forminput';
+
+import Login from './login';
+import Signup from './Signup';
 class LoginSignup extends React.Component {
   constructor(props) {
     super(props);
@@ -39,81 +41,7 @@ class LoginSignup extends React.Component {
           </ul>
 
           <div className="tab-content">
-            {this.state.activeTab == 'signup' ? (
-              <div id="signup">
-                <h1>Sign Up for Free</h1>
-
-                <form action="/" method="post">
-                  <div className="top-row">
-                    <Forminput
-                      label="First Name"
-                      inputProps={{
-                        type: 'text',
-                        required: true,
-                        autoComplete: 'off'
-                      }}
-                    />
-                    <Forminput
-                      label="Last Name"
-                      inputProps={{
-                        type: 'text',
-                        required: true,
-                        autoComplete: 'off'
-                      }}
-                    />
-                  </div>
-                  <Forminput
-                    label="Email Address"
-                    inputProps={{
-                      type: 'email',
-                      required: true,
-                      autoComplete: 'off'
-                    }}
-                  />
-                  <Forminput
-                    label="Set A Password"
-                    inputProps={{
-                      type: 'password',
-                      required: true,
-                      autoComplete: 'off'
-                    }}
-                  />
-
-                  <button type="submit" className="button button-block">
-                    Get Started
-                  </button>
-                </form>
-              </div>
-            ) : (
-              <div id="login">
-                <h1>Welcome Back!</h1>
-
-                <form action="/" method="post">
-                  <Forminput
-                    label="Email Address"
-                    inputProps={{
-                      type: 'email',
-                      required: true,
-                      autoComplete: 'off'
-                    }}
-                  />
-                  <Forminput
-                    label="Password"
-                    inputProps={{
-                      type: 'password',
-                      required: true,
-                      autoComplete: 'off'
-                    }}
-                  />
-
-                  <p className="forgot">
-                    <a href="#">Forgot Password?</a>
-                  </p>
-
-                  <button className="button button-block">Log In</button>
-                </form>
-              </div>
-            )}
+            {this.state.activeTab == 'signup' ? <Signup /> : <Login />}
           </div>
         </div>
       </Errorboundary>
