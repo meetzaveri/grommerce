@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './scss';
 import LoginSignup from './components/LoginSignup/LoginSignup';
 import Routes from './config/routes';
-import Inventory from './containers/Inventory';
+import InventoryPage from './containers/Inventory';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 class Main extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class Main extends React.Component {
         <Router>
           <Switch>
             <Route path={Routes.login} component={LoginSignup} />
-            <Route path={Routes.inventory} component={Inventory} />
+            <Route path={Routes.inventory} component={InventoryPage} />
           </Switch>
         </Router>
       </Fragment>
