@@ -11,8 +11,8 @@ class Main extends React.Component {
       <Fragment>
         <Router>
           <Switch>
-            <Route path={Routes.login} component={LoginSignup} />
-            <Route path={Routes.inventory} component={InventoryPage} />
+            <Route exact path={Routes.login} component={LoginSignup} />
+            <Route exact path={Routes.inventory} component={InventoryPage} />
           </Switch>
         </Router>
       </Fragment>
