@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import InventoryComponent from '../components/Inventory/inventory';
+import React, { Component, Fragment } from "react";
+import InventoryComponent from "../components/Inventory";
+import Errorboundary from "../wrappers/errorBoundary";
 
 class Inventory extends Component {
   constructor(props) {
@@ -8,9 +9,11 @@ class Inventory extends Component {
   }
   render() {
     return (
-      <Fragment>
-        <InventoryComponent />
-      </Fragment>
+      <Errorboundary>
+        <Fragment>
+          <InventoryComponent />
+        </Fragment>
+      </Errorboundary>
     );
   }
 }

@@ -5,6 +5,7 @@
 @import './base/color';
 @import './utils/mediaqueries';
 @import './utils/mixins';
+@import './utils/scaffolding';
 
 // components
 
@@ -12,3 +13,4 @@
 @import './components/header';
 
 @import './components/login';
+@import './components/inventory';
