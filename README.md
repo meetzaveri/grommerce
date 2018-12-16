@@ -1,5 +1,7 @@
 # Grommerce
 
+![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
+
 An ecommerce platform to as an utlity for developers. The project is focussed on e-commerce store/warehouse handling where the store owners can manage their stuff that they are going to sell along with the orders and their customers.
 
 ## Scope
@@ -34,4 +36,3 @@ If you own a Grocery Store which has online platform and you are also enabling t
 ## Specializations
 
 As the name suggests, this ecommerce project will only allow grocery based stocks to handle. That means we are open for grocery based ecommerce stocks. Currently we are set on this, but in future we might add another domain to support more areas.
-
