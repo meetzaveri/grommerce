@@ -27,6 +27,7 @@ If you own a Grocery Store which has online platform and you are also enabling t
 
 ### December 2018
 
+- Admin Dashboard Layout
 - Products Page new design
 - Functionality of adding, editing and deleting the product.
 
