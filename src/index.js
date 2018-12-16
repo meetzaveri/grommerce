@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import 'scss';
-import LoginSignup from '/components/LoginSignup/LoginSignup';
-import Routes from '/config/routes';
-import InventoryPage from '/containers/Inventory';
+import LoginSignup from 'components/LoginSignup/LoginSignup';
+import Routes from 'config/routes';
+import InventoryPage from 'containers/Inventory';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 class Main extends React.Component {
   render() {
