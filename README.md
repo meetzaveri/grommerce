@@ -25,7 +25,10 @@ If you own a Grocery Store which has online platform and you are also enabling t
 
 ## Roadmap & future features
 
-Still needs to be decided.
+### December 2018
+
+- Products Page new design
+- Functionality of adding, editing and deleting the product.
 
 ## Specializations
 
