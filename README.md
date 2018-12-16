@@ -21,17 +21,13 @@ Install it with npm
 npm i grommerce --save
 ```
 
-### Using CLI
-
-[Input needed]
-
 ## Why should I use this?
 
-[Input needed]
+If you own a Grocery Store which has online platform and you are also enabling the online transactions then you might need a control panel where you can have a idea about your stocks, your overall sale conversion, your overall profit, your overall revenue.
 
 ## Roadmap & future features
 
-[Input needed]
+Still needs to be decided.
 
 ## Specializations
 
