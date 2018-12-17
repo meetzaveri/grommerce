@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
-import InventoryComponent from "../components/Inventory";
-import Errorboundary from "../wrappers/errorBoundary";
+import React, { Component, Fragment } from 'react';
+import InventoryComponent from 'components/Inventory/inventory';
+import Errorboundary from 'wrappers/errorBoundary';
 
 class Inventory extends Component {
   constructor(props) {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html --no-cache",
+    "start": "parcel index.html",
     "lint": "npx eslint --ext jsx,js src test"
   },
   "repository": {
@@ -19,12 +19,15 @@
   "homepage": "https://github.com/reeversedev/grommerce#readme",
   "dependencies": {
     "antd": "^3.10.8",
+    "components": "^0.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "styled-components": "^4.0.2"
+    "scss": "^0.2.4",
+    "styled-components": "^4.0.2",
+    "wrappers": "^0.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -46,6 +49,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^8.2.6",
     "babel-plugin-import": "^1.10.0",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.19.1",
