@@ -3,3 +3,119 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Common classes to re-use in components */
+.db {
+  display: block;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.b--black-20 {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.border-0 {
+  border: 0;
+}
+.br {
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+.pr2 {
+  padding-right: 0.5rem;
+}
+
+.pl2 {
+  padding-left: 0.5rem;
+}
+
+.pr4 {
+  padding-right: 2rem;
+}
+
+.pl4 {
+  padding-left: 2rem;
+}
+
+.pr {
+  position: relative;
+}
+
+.flr {
+  float: right;
+}
+
+.ptbrl1 {
+  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+}
+
+.ptbrl3 {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.pt2 {
+  padding-bottom: 1rem;
+}
+
+.pt4 {
+  padding-bottom: 2rem;
+}
+
+.pb2 {
+  padding-bottom: 1rem;
+}
+
+.pb4 {
+  padding-bottom: 2rem;
+}
+
+.pv3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pv1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.d-flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.d-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dt {
+  display: table;
+}
+
+.dt-row {
+  display: table-row;
+}
+
+.dtc {
+  display: table-cell;
+}
+
+.v-top {
+  vertical-align: top;
+}
+.v-btm {
+  vertical-align: bottom;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.w4 {
+  width: 8rem;
+}
