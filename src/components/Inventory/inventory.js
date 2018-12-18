@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Layout, Row, Col, Button, Input } from 'antd';
+import TableComponent from './table';
+
 const { Header, Footer, Content } = Layout;
 
 const HeaderLayout = props => {
@@ -16,10 +18,16 @@ const ContentLayout = props => {
   return (
     <Fragment>
       <Row>
-        <Col span={8}>col-8</Col>
-        <Col span={8} offset={8}>
-          col-8
+        <Col span={8} className="ptbrl3 custom-col-content-layout">
+          {' '}
+          <Input size="large" placeholder="Search" />
         </Col>
+        <Col span={8} offset={7} className="ptbrl3">
+          <Button className="flr" type="primary" size="large">
+            Add item
+          </Button>
+        </Col>
+        <TableComponent />
       </Row>
     </Fragment>
   );
