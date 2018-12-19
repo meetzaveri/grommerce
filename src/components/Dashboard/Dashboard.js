@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Button } from 'antd';
+import AddProduct from '../Product/AddProduct';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -60,7 +61,7 @@ export default class Dashboard extends Component {
                 minHeight: 280
               }}
             >
-              Content
+              <AddProduct />
             </Content>
           </Layout>
         </Layout>
