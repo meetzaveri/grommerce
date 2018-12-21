@@ -3,6 +3,7 @@ import { Layout, Menu, Icon } from 'antd';
 import AddProduct from 'components/Product/AddProduct';
 import Paragraph from 'styled/Paragraph';
 import routes from 'config/routes';
+import logo from '../../assets/grommerce-logo.svg';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -20,6 +21,7 @@ export default class Dashboard extends Component {
             className="logo"
             onClick={() => this.props.history.push(routes.dashboard)}
           >
+            <img src={logo} height="45" style={{paddingRight: '10px'}} />
             Grommerce
           </a>
           <Menu
