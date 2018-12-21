@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon, Button } from 'antd';
-import AddProduct from '../Product/AddProduct';
-import Paragraph from '../../styled/Paragraph';
+import { Layout, Menu, Icon } from 'antd';
+import AddProduct from 'components/Product/AddProduct';
+import Paragraph from 'styled/Paragraph';
+import routes from 'config/routes';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 export default class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
   render() {
     return (
       <Layout>
         <Header className="header">
-          <a className="logo">Grommerce</a>
+          <a
+            className="logo"
+            onClick={() => this.props.history.push(routes.dashboard)}
+          >
+            Grommerce
+          </a>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -38,7 +48,12 @@ export default class Dashboard extends Component {
                   </span>
                 }
               >
-                <Menu.Item key="1">Add Products</Menu.Item>
+                <Menu.Item
+                  key="1"
+                  onClick={() => this.props.history.push(routes.addProducts)}
+                >
+                  Add Products
+                </Menu.Item>
                 <Menu.Item key="2">View Products</Menu.Item>
               </SubMenu>
             </Menu>
@@ -57,7 +72,12 @@ export default class Dashboard extends Component {
                 minHeight: 280
               }}
             >
-              <AddProduct />
+              {(() => {
+                switch (this.props.location.pathname) {
+                  case '/dashboard/add-products':
+                    return <AddProduct />;
+                }
+              })()}
             </Content>
           </Layout>
         </Layout>
