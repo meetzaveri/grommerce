@@ -86,7 +86,9 @@ function onChange(pagination, filters, sorter) {
 }
 
 const TableComponent = props => {
-  return <Table columns={columns} dataSource={data} onChange={onChange} />;
+  return (
+    <Table columns={columns} dataSource={data} onChange={onChange} {...props} />
+  );
 };
 
 export default TableComponent;

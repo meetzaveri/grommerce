@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon, Button } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
+import AddProduct from 'components/Product/AddProduct';
+import Paragraph from 'styled/Paragraph';
+import routes from 'config/routes';
+import logo from '../../assets/grommerce-logo.svg';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 export default class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
   render() {
     return (
       <Layout>
         <Header className="header">
-          <a className="logo">Grommerce</a>
+          <a
+            className="logo"
+            onClick={() => this.props.history.push(routes.dashboard)}
+          >
+            <img src={logo} height="45" style={{paddingRight: '10px'}} />
+            Grommerce
+          </a>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -36,21 +50,21 @@ export default class Dashboard extends Component {
                   </span>
                 }
               >
-                <Menu.Item key="1">Add Products</Menu.Item>
+                <Menu.Item
+                  key="1"
+                  onClick={() => this.props.history.push(routes.addProducts)}
+                >
+                  Add Products
+                </Menu.Item>
                 <Menu.Item key="2">View Products</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
           <Layout style={{ padding: '0 24px 24px' }}>
             <div style={{ margin: '16px 0' }}>
-              <Button
-                type="default"
-                className="float-right"
-                style={{ float: 'right' }}
-                icon="plus"
-              >
+              <Paragraph size="22px" margin="0" weight="bold">
                 Add Products
-              </Button>
+              </Paragraph>
             </div>
             <Content
               style={{
@@ -60,7 +74,12 @@ export default class Dashboard extends Component {
                 minHeight: 280
               }}
             >
-              Content
+              {(() => {
+                switch (this.props.location.pathname) {
+                  case '/dashboard/add-products':
+                    return <AddProduct />;
+                }
+              })()}
             </Content>
           </Layout>
         </Layout>

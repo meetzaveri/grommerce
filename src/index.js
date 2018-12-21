@@ -7,6 +7,7 @@ import Routes from 'config/routes';
 import InventoryPage from 'containers/Inventory';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from 'components/Dashboard/Dashboard';
+import AddProduct from 'components/Product/AddProduct';
 
 class Main extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class Main extends React.Component {
             <Route exact path={Routes.login} component={LoginSignup} />
             <Route exact path={Routes.inventory} component={InventoryPage} />
             <Route exact path={Routes.dashboard} component={Dashboard} />
+            <Route exact path={Routes.addProducts} component={Dashboard} />
           </Switch>
         </Router>
       </Fragment>

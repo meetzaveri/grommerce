@@ -1,5 +1,6 @@
 export default {
   dashboard: '/',
   login: '/login',
-  inventory: '/inventory'
+  inventory: '/inventory',
+  addProducts: '/dashboard/add-products'
 };
