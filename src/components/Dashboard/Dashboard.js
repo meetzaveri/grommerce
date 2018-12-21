@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Button } from 'antd';
 import AddProduct from '../Product/AddProduct';
+import Paragraph from '../../styled/Paragraph';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -44,14 +45,9 @@ export default class Dashboard extends Component {
           </Sider>
           <Layout style={{ padding: '0 24px 24px' }}>
             <div style={{ margin: '16px 0' }}>
-              <Button
-                type="default"
-                className="float-right"
-                style={{ float: 'right' }}
-                icon="plus"
-              >
+              <Paragraph size="22px" margin="0" weight="bold">
                 Add Products
-              </Button>
+              </Paragraph>
             </div>
             <Content
               style={{

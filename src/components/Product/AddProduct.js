@@ -13,11 +13,6 @@ class AddProduct extends Component {
     expand: false
   };
   render() {
-    const { getFieldDecorator } = this.props.form;
-    const formItemLayout = {
-      // labelCol: { span: 6 },
-      // wrapperCol: { span: 12 }
-    };
     return (
       <div>
         <Form className="ant-advanced-search-form">
@@ -29,31 +24,23 @@ class AddProduct extends Component {
                   style={{ width: '60%', marginRight: 8, marginLeft: 20 }}
                 />
               </FormItem>
-            </Col>
-            <Col span="12">
               <FormItem label="Manufacturer" required="true">
                 <Input
                   placeholder="Manufacturer's Name"
                   style={{ width: '60%', marginRight: 8, marginLeft: 20 }}
                 />
               </FormItem>
-            </Col>
-            <Col span="12">
               <FormItem label="Manufacture Date" required="true">
                 <DatePicker
                   style={{ width: '60%', marginRight: 8, marginLeft: 20 }}
                 />
               </FormItem>
-            </Col>
-            <Col span="12">
               <FormItem label="Expiry Date">
                 <DatePicker
                   placeholder="Enter the expiry date."
                   style={{ width: '60%', marginRight: 8, marginLeft: 20 }}
                 />
               </FormItem>
-            </Col>
-            <Col span="12">
               <FormItem label="Description" required="true">
                 <TextArea
                   style={{
@@ -69,8 +56,8 @@ class AddProduct extends Component {
               </FormItem>
             </Col>
             <Col span="12">
-              <FormItem {...formItemLayout} label="Dragger">
-                <div className="dropbox">
+              <FormItem label="Dragger" required>
+                <div className="dropbox" style={{ paddingLeft: 20 }}>
                   <Upload.Dragger name="files">
                     <p className="ant-upload-drag-icon">
                       <Icon type="inbox" />
