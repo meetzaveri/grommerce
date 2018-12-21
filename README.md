@@ -1,4 +1,4 @@
-![Logo](https://github.com/Grommerce/grommerce-frontend/blob/development/src/assets/grommerce-logo.svg){ width="800" height="600" style="display: block; margin: 0 auto" }
+![Logo](https://github.com/Grommerce/grommerce-frontend/blob/development/src/assets/grommerce-logo.svg)
 
 # Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
 
