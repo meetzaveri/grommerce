@@ -1,6 +1,4 @@
-# Grommerce
-
-![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
+# Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
 
 An ecommerce platform to as an utlity for developers. The project is focussed on e-commerce store/warehouse handling where the store owners can manage their stuff that they are going to sell along with the orders and their customers.
 
