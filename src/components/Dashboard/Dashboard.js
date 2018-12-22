@@ -3,6 +3,7 @@ import { Layout, Menu, Icon } from 'antd';
 import AddProduct from 'components/Product/AddProduct';
 import Paragraph from 'styled/Paragraph';
 import routes from 'config/routes';
+import ViewProduct from 'components/Product/ViewProduct';
 import logo from '../../assets/grommerce-logo.svg';
 
 const { SubMenu } = Menu;
@@ -21,7 +22,7 @@ export default class Dashboard extends Component {
             className="logo"
             onClick={() => this.props.history.push(routes.dashboard)}
           >
-            <img src={logo} height="45" style={{paddingRight: '10px'}} />
+            <img src={logo} height="45" style={{ paddingRight: '10px' }} />
             Grommerce
           </a>
           <Menu
@@ -56,7 +57,12 @@ export default class Dashboard extends Component {
                 >
                   Add Products
                 </Menu.Item>
-                <Menu.Item key="2">View Products</Menu.Item>
+                <Menu.Item
+                  key="2"
+                  onClick={() => this.props.history.push(routes.viewProducts)}
+                >
+                  View Products
+                </Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -78,6 +84,8 @@ export default class Dashboard extends Component {
                 switch (this.props.location.pathname) {
                   case '/dashboard/add-products':
                     return <AddProduct />;
+                  case '/dashboard/view-products':
+                    return <ViewProduct />;
                 }
               })()}
             </Content>
