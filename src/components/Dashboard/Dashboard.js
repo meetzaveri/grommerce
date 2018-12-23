@@ -13,7 +13,23 @@ export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+    this.state = {
+      selectedKey: ''
+    };
   }
+  componentDidMount = () => {
+    switch (this.props.location.pathname) {
+      case '/dashboard/add-products':
+        this.setState({
+          selectedKey: 'Add Products'
+        });
+        break;
+      case '/dashboard/view-products':
+        this.setState({
+          selectedKey: 'View Products'
+        });
+    }
+  };
   render() {
     return (
       <Layout>
@@ -38,7 +54,7 @@ export default class Dashboard extends Component {
           <Sider width={200} style={{ background: '#fff' }}>
             <Menu
               mode="inline"
-              defaultSelectedKeys={['1']}
+              selectedKeys={this.state.selectedKey}
               defaultOpenKeys={['sub1']}
               style={{ height: '100%', borderRight: 0 }}
             >
@@ -52,14 +68,24 @@ export default class Dashboard extends Component {
                 }
               >
                 <Menu.Item
-                  key="1"
-                  onClick={() => this.props.history.push(routes.addProducts)}
+                  key="Add Products"
+                  onClick={() => {
+                    this.setState({
+                      selectedKey: 'Add Products'
+                    });
+                    this.props.history.push(routes.addProducts);
+                  }}
                 >
                   Add Products
                 </Menu.Item>
                 <Menu.Item
-                  key="2"
-                  onClick={() => this.props.history.push(routes.viewProducts)}
+                  key="View Products"
+                  onClick={() => {
+                    this.setState({
+                      selectedKey: 'View Products'
+                    });
+                    this.props.history.push(routes.viewProducts);
+                  }}
                 >
                   View Products
                 </Menu.Item>
@@ -68,9 +94,22 @@ export default class Dashboard extends Component {
           </Sider>
           <Layout style={{ padding: '0 24px 24px' }}>
             <div style={{ margin: '16px 0' }}>
-              <Paragraph size="22px" margin="0" weight="bold">
-                Add Products
-              </Paragraph>
+              {(() => {
+                switch (this.props.location.pathname) {
+                  case '/dashboard/add-products':
+                    return (
+                      <Paragraph size="22px" margin="0" weight="bold">
+                        Add Products
+                      </Paragraph>
+                    );
+                  case '/dashboard/view-products':
+                    return (
+                      <Paragraph size="22px" margin="0" weight="bold">
+                        View Products
+                      </Paragraph>
+                    );
+                }
+              })()}
             </div>
             <Content
               style={{
