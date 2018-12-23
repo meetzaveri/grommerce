@@ -25,9 +25,9 @@ class ViewProduct extends Component {
                 />
               }
               actions={[
-                <Icon type="setting" />,
-                <Icon type="edit" />,
-                <Icon type="ellipsis" />
+                <Icon type="setting" key="setting" />,
+                <Icon type="edit" key="edit" />,
+                <Icon type="ellipsis" key="ellipsis" />
               ]}
             >
               <Meta
@@ -49,9 +49,9 @@ class ViewProduct extends Component {
                 />
               }
               actions={[
-                <Icon type="setting" />,
-                <Icon type="edit" />,
-                <Icon type="ellipsis" />
+                <Icon type="setting" key="setting" />,
+                <Icon type="edit" key="edit" />,
+                <Icon type="ellipsis" key="ellipsis" />
               ]}
             >
               <Meta
@@ -73,9 +73,9 @@ class ViewProduct extends Component {
                 />
               }
               actions={[
-                <Icon type="setting" />,
-                <Icon type="edit" />,
-                <Icon type="ellipsis" />
+                <Icon type="setting" key="setting" />,
+                <Icon type="edit" key="setting" />,
+                <Icon type="ellipsis" key="setting" />
               ]}
             >
               <Meta
@@ -101,9 +101,9 @@ class ViewProduct extends Component {
                 />
               }
               actions={[
-                <Icon type="setting" />,
-                <Icon type="edit" />,
-                <Icon type="ellipsis" />
+                <Icon type="setting" key="setting" />,
+                <Icon type="edit" key="edit" />,
+                <Icon type="ellipsis" key="ellipsis" />
               ]}
             >
               <Meta
@@ -125,9 +125,9 @@ class ViewProduct extends Component {
                 />
               }
               actions={[
-                <Icon type="setting" />,
-                <Icon type="edit" />,
-                <Icon type="ellipsis" />
+                <Icon type="setting" key="setting" />,
+                <Icon type="edit" key="edit" />,
+                <Icon type="ellipsis" key="ellipsis" />
               ]}
             >
               <Meta
@@ -149,9 +149,9 @@ class ViewProduct extends Component {
                 />
               }
               actions={[
-                <Icon type="setting" />,
-                <Icon type="edit" />,
-                <Icon type="ellipsis" />
+                <Icon type="setting" key="setting" />,
+                <Icon type="edit" key="edit" />,
+                <Icon type="ellipsis" key="ellipsis" />
               ]}
             >
               <Meta
