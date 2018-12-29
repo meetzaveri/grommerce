@@ -3,6 +3,18 @@ import { Form, Row, Col, Input, DatePicker, Icon, Upload } from 'antd';
 // import gql from 'graphql-tag';
 // import { graphql } from 'react-apollo';
 
+import gql from 'graphql-tag';
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
+const client = new ApolloClient({
+  link: new HttpLink({
+    uri: 'http://localhost:3000/graphql'
+  }),
+  cache: new InMemoryCache()
+});
+
 const FormItem = Form.Item;
 
 const { TextArea } = Input;
@@ -15,7 +27,6 @@ const { TextArea } = Input;
 //   }
 // `;
 
-
 class AddProduct extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +34,21 @@ class AddProduct extends Component {
   state = {
     expand: false
   };
+
+  componentDidMount() {
+    client
+      .query({
+        query: gql`
+          query getManufacturers {
+            manufacturers {
+              name
+              id
+            }
+          }
+        `
+      })
+      .then(result => console.log(result));
+  }
   // submitForm = () => {
   //   this.props.addProduct({
   //     variables: {
