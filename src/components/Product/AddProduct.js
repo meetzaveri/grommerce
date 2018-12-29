@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
 import { Form, Row, Col, Input, DatePicker, Icon, Upload } from 'antd';
+// import gql from 'graphql-tag';
+// import { graphql } from 'react-apollo';
 
 const FormItem = Form.Item;
 
 const { TextArea } = Input;
+
+// const addProduct = gql`
+//   mutation addProduct($name: String!) {
+//     addProduct(name: $name) {
+//       _id
+//     }
+//   }
+// `;
+
+
 class AddProduct extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
   state = {
     expand: false
   };
+  // submitForm = () => {
+  //   this.props.addProduct({
+  //     variables: {
+  //       name: this.name.value
+  //     }
+  //   });
+  // };
   render() {
     return (
       <div>

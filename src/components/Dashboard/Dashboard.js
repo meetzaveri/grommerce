@@ -12,7 +12,6 @@ const { Header, Content, Sider } = Layout;
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       selectedKey: ''
     };
