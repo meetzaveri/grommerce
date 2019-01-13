@@ -1,31 +1,27 @@
-import React, { Fragment } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
-import 'scss/index.scss';
-import LoginSignup from 'components/LoginSignup/LoginSignup';
-import Routes from 'config/routes';
-import InventoryPage from 'containers/Inventory';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Dashboard from 'components/Dashboard/Dashboard';
-import AddProduct from 'components/Product/AddProduct';
+import { ApolloProvider } from 'react-apollo';
+import { ApolloClient } from 'apollo-client';
 
-class Main extends React.Component {
-  render() {
-    return (
-      <Fragment>
-        <Router>
-          <Switch>
-            <Route exact path={Routes.login} component={LoginSignup} />
-            <Route exact path={Routes.inventory} component={InventoryPage} />
-            <Route exact path={Routes.dashboard} component={Dashboard} />
-            <Route exact path={Routes.addProducts} component={Dashboard} />
-          </Switch>
-        </Router>
-      </Fragment>
-    );
-  }
-}
+import App from './App';
 
-let App = document.getElementById('root');
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
-ReactDOM.render(<Main />, App);
+const client = new ApolloClient({
+  link: new HttpLink({
+    uri: 'http://localhost:3000/graphql'
+  }),
+  cache: new InMemoryCache()
+});
+
+ReactDOM.render(
+  <BrowserRouter>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
