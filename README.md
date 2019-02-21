@@ -1,4 +1,6 @@
-![Logo](https://github.com/Grommerce/grommerce-frontend/blob/development/src/assets/grommerce-logo.svg)
+<div align="center">
+  <img src="https://github.com/Grommerce/grommerce-frontend/blob/development/src/assets/grommerce-logo.svg" height="80" width="80" />
+</div>
 
 # Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
 
