@@ -23,7 +23,7 @@ Since it is highly recommended for store owners only, therefore the following fe
 
 ## Why should I use this?
 
-If you own a Grocery Store which has online platform and you are also enabling the online transactions then you might need a control panel where you can have a idea about your stocks, your overall sale conversion, your overall profit, your overall revenue.
+If you own a Grocery Store which has online platform and you are also enabling the online transactions then you might need a control panel where you can have a control over your stocks, your overall sale conversion, your overall profit, your overall revenue.
 
 ## Roadmap & future features
 
@@ -32,6 +32,12 @@ If you own a Grocery Store which has online platform and you are also enabling t
 - Admin Dashboard Layout
 - Products Page new design
 - Functionality of adding, editing and deleting the product.
+
+### February 2019
+
+- Fix and Modularise the Code
+- Implement Apollo Server
+- Modularise Schema and Resolvers and stich them properly.
 
 ## Specializations
 
