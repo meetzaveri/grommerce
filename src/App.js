@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import 'antd/dist/antd.css';
 import 'scss/index.scss';
 import LoginSignup from 'components/LoginSignup/LoginSignup';
 import Routes from 'config/routes';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
 const { Header, Sider, Content } = Layout;
 
 export default class Navbar extends Component {

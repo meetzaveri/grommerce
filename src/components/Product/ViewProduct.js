@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card, Icon, Avatar, Row, Col } from 'antd';
 
 const { Meta } = Card;
 

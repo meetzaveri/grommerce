@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Layout, Row, Col, Button, Input } from 'antd';
 import TableComponent from './table';
 
 const { Header, Footer, Content } = Layout;

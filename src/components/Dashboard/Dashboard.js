@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
 import AddProduct from 'components/Product/AddProduct';
 import Paragraph from 'styled/Paragraph';
 import routes from 'config/routes';

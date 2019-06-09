@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Form, Row, Col, Input, DatePicker, Icon, Upload } from 'antd';
 import { Mutation } from 'react-apollo';
 import { ADD_PRODUCT } from 'mutations';
 const FormItem = Form.Item;
