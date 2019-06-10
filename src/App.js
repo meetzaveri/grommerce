@@ -1,9 +1,13 @@
 import { hot } from 'react-hot-loader';
 import React, { Fragment } from 'react';
-import 'scss/index.scss';
 import Routes from 'config/routes';
 import { Route, Switch } from 'react-router-dom';
 import Dashboard from 'components/Dashboard/Dashboard';
+
+import '../assets/css/vendor/bootstrap.min.css';
+import '../assets/css/sass/themes/gogo.light.blue.scss';
+import '../assets/fonts/simple-line-icons/css/simple-line-icons.css';
+import '../assets/fonts/iconsmind-s/css/iconsminds.css';
 
 class App extends React.Component {
   render() {
