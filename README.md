@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Grommerce/grommerce-frontend/blob/development/src/assets/grommerce-logo.svg" height="180" width="180" />
+  <img src="https://github.com/Grommerce/grommerce-frontend/blob/development/assets/grommerce-logo.svg" height="180" width="180" />
 </div>
 
 # Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
