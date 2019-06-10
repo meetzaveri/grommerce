@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader';
 import React, { Fragment } from 'react';
 import 'scss/index.scss';
 import Routes from 'config/routes';
@@ -17,4 +18,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default hot(module)(App);

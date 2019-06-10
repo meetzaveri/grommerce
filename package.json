@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html -p 3500"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "react": "^16.5.2",
     "react-apollo": "^2.3.3",
     "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.11.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "reactstrap": "^8.0.0",
@@ -42,7 +43,12 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^7.1.5",
     "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.10.3",
     "sass": "^1.14.2"
   }
