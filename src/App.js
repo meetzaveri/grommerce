@@ -11,11 +11,7 @@ class App extends React.Component {
     return (
       <Fragment>
         <Switch>
-          <Route exact path={Routes.login} component={LoginSignup} />
-          <Route exact path={Routes.inventory} component={InventoryPage} />
           <Route exact path={Routes.dashboard} component={Dashboard} />
-          <Route exact path={Routes.addProducts} component={Dashboard} />
-          <Route exact path={Routes.viewProducts} component={Dashboard} />
         </Switch>
       </Fragment>
     );
