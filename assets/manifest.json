@@ -1,0 +1,8 @@
+{
+  "short_name": "Grommerce",
+  "name": "Grommerce",
+  "theme_color": "#3ebcb3",
+  "background_color": "#4fc6be",
+  "display": "standalone",
+  "start_url": "/writer.html"
+}
