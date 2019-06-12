@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from 'components/Header';
 
-import Dashboard from 'Pages/Dashboard/Dashboard';
+import Dashboard from 'pages/Dashboard/Dashboard';
 
 import '../assets/css/vendor/bootstrap.min.css';
 import '../assets/css/sass/themes/gogo.light.blue.scss';
