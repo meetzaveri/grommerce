@@ -2,7 +2,10 @@ import { hot } from 'react-hot-loader';
 import React, { Fragment } from 'react';
 import Routes from 'config/routes';
 import { Route, Switch } from 'react-router-dom';
-import Dashboard from 'components/Dashboard/Dashboard';
+
+import Header from 'components/Header';
+
+import Dashboard from 'Pages/Dashboard/Dashboard';
 
 import '../assets/css/vendor/bootstrap.min.css';
 import '../assets/css/sass/themes/gogo.light.blue.scss';
@@ -13,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <Fragment>
+        <Header />
         <Switch>
           <Route exact path={Route.index} component={Dashboard} />
           <Route exact path={Routes.dashboard} component={Dashboard} />
