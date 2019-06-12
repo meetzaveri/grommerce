@@ -11,17 +11,19 @@ import '../assets/css/vendor/bootstrap.min.css';
 import '../assets/css/sass/themes/gogo.light.blue.scss';
 import '../assets/fonts/simple-line-icons/css/simple-line-icons.css';
 import '../assets/fonts/iconsmind-s/css/iconsminds.css';
+import { Provider } from 'mobx-react';
+import headerStore from 'stores/header';
 
 class App extends React.Component {
   render() {
     return (
-      <Fragment>
-        <Header />
+      <Provider headerStore={headerStore}>
+        {/* <Header /> */}
         <Switch>
           <Route exact path={Route.index} component={Dashboard} />
           <Route exact path={Routes.dashboard} component={Dashboard} />
         </Switch>
-      </Fragment>
+      </Provider>
     );
   }
 }

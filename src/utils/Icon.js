@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Icons from 'Common/Utils/icons';
+import Icons from './icons';
 
 class Icon extends Component {
   render() {
