@@ -8,16 +8,10 @@ import {
 } from 'reactstrap';
 import Icon from 'utils/Icon';
 
-import { connect } from 'react-redux';
-
-import {
-  setContainerClassnames,
-  clickOnMobileMenu,
-  logoutUser
-} from 'redux/actions/header';
-
-import { menuHiddenBreakpoint, searchPath } from 'redux/actions/types';
 import { bgHEX } from './colorConfig/index';
+import { inject, observer } from 'mobx-react';
+@inject('headerStore')
+@observer
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -52,30 +46,6 @@ class Header extends Component {
     return setInterval(func, interval);
   };
 
-  componentDidMount = async () => {
-    let user = localStorage.getItem('user');
-    if (user) {
-      user = JSON.parse(user);
-      this.setState({
-        firstName: user.firstName,
-        lastName: user.lastName,
-        role: user.role,
-        email: user.email
-      });
-
-      // For setting an unique bg color to bg image based on email - this can me made a separate fn and called when required
-      let emailnumsum = 0;
-      user.email.split('').map(char => {
-        emailnumsum += char.charCodeAt(0);
-      });
-      this.setState({
-        bgHEX: bgHEX[emailnumsum % bgHEX.length]
-      });
-    }
-
-    this.setIntervalImmediately(this.udpateNotifCount.bind(this), this.timer);
-  };
-
   menuButtonClick = (e, menuClickCount, containerClassnames) => {
     e.preventDefault();
     setTimeout(() => {
@@ -83,7 +53,7 @@ class Header extends Component {
       event.initEvent('resize', false, false);
       window.dispatchEvent(event);
     }, 350);
-    this.props.setContainerClassnames(
+    this.props.headerStore.setContainerClassnames(
       ++menuClickCount,
       containerClassnames,
       this.props.selectedMenuHasSubItems
@@ -218,30 +188,12 @@ class Header extends Component {
   };
 
   render() {
-    const { containerClassnames, menuClickCount } = this.props;
+    const {
+      containerClassnames,
+      menuClickCount
+    } = this.props.headerStore.classNames;
     const user = JSON.parse(localStorage.getItem('user'));
-
-    //this can be set in localstorage after login directly
-
-    /**
-     * Use below logic for Displaying only firstName first character via Goggle CDN
-     */
-    // const profilePic =
-    // 	"https://ssl.gstatic.com/docs/common/profile/" +
-    // 	user.firstName[0].toUpperCase() +
-    // 	".png";
-
-    /**
-     * Use below logic for displaying both firstName and lastName first Character via placeholder CDN
-     * Alternate: https://dummyimage.com/128x128/6d26e0/fff.png&text=SK
-     * Another Alternate: https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/[FL]-[NUMBER%7].svg
-     */
-    const profilePic =
-      'https://via.placeholder.com/128/' +
-      this.state.bgHEX.replace('#', '') +
-      '/FFFFFF/?text=' +
-      user.firstName[0].toUpperCase() +
-      user.lastName[0].toUpperCase();
+    console.log('props', this.props);
 
     return (
       <nav className="navbar fixed-top">
@@ -298,17 +250,17 @@ class Header extends Component {
             <UncontrolledDropdown className="dropdown-menu-right">
               <DropdownToggle className="p-0" color="empty">
                 <span className="mr-1">
-                  {user.firstName} {user.lastName}
+                  {/* {user.firstName} {user.lastName} */}
                 </span>
                 <span>
-                  <img
+                  {/* <img
                     alt="Profile"
                     src={profilePic}
                     style={{ backgroundColor: this.state.bgHEX }}
-                  />
+                  /> */}
                 </span>
               </DropdownToggle>
-              <DropdownMenu className="mt-3" right>
+              {/* <DropdownMenu className="mt-3" right>
                 {this.props.dropDownItems.map((item, i) => {
                   if (item.type === 'link') {
                     return (
@@ -328,7 +280,7 @@ class Header extends Component {
                     );
                   }
                 })}
-              </DropdownMenu>
+              </DropdownMenu> */}
             </UncontrolledDropdown>
           </div>
         </div>
@@ -337,16 +289,4 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const {
-    containerClassnames,
-    menuClickCount,
-    selectedMenuHasSubItems
-  } = state.header;
-
-  return { containerClassnames, menuClickCount, selectedMenuHasSubItems };
-};
-export default connect(
-  mapStateToProps,
-  { setContainerClassnames, clickOnMobileMenu, logoutUser }
-)(Header);
+export default Header;
