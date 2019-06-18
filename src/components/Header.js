@@ -192,8 +192,6 @@ class Header extends Component {
       containerClassnames,
       menuClickCount
     } = this.props.headerStore.classNames;
-    const user = JSON.parse(localStorage.getItem('user'));
-    console.log('props', this.props);
 
     return (
       <nav className="navbar fixed-top">
