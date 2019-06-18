@@ -204,7 +204,8 @@ class Header extends Component {
             this.menuButtonClick(e, menuClickCount, containerClassnames);
           }}
         >
-          <Icon icon="ICON_LOGO" className="icon" />
+          {/* <Icon icon="ICON_LOGO" className="icon" /> */}
+          <i className="iconsminds-align-justify-all" />
         </NavLink>
 
         <a className="navbar-logo" href="/">
