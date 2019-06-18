@@ -19,7 +19,7 @@ class MainApp extends Component {
     return (
       <div
         id="app-container"
-        className={headerStore.classNames.containerClassnames}
+        className="menu-default menu-sub-hidden main-hidden sub-hidden"
       >
         <Header />
         <main>

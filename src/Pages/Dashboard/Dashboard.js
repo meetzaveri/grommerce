@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Card, CardBody } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
-import ReactSiema from 'react-siema';
+import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 
 @inject('headerStore')
 @observer
@@ -22,12 +22,21 @@ export default class Dashboard extends Component {
   render() {
     const { headerStore } = this.props;
     return (
-      <>
+      <div className="dashboard-wrapper">
         <Row>
           <Colxx lg="12" xl="6">
             <div className="icon-cards-row">
-              <ReactSiema>
-                <div className="icon-row-item">
+              <ReactSiema
+                perPage={{
+                  0: 1,
+                  320: 2,
+                  576: 3,
+                  1800: 4
+                }}
+                controls={false}
+                loop={false}
+              >
+                <div className="icon-row-item mb-4">
                   <Card>
                     <CardBody className="text-center">
                       <i className="iconsminds-clock" />
@@ -38,7 +47,7 @@ export default class Dashboard extends Component {
                     </CardBody>
                   </Card>
                 </div>
-                <div className="icon-row-item">
+                <div className="icon-row-item mb-4">
                   <Card>
                     <CardBody className="text-center">
                       <i className="iconsminds-basket-coins" />
@@ -49,7 +58,7 @@ export default class Dashboard extends Component {
                     </CardBody>
                   </Card>
                 </div>
-                <div className="icon-row-item">
+                <div className="icon-row-item mb-4">
                   <Card>
                     <CardBody className="text-center">
                       <i className="iconsminds-arrow-refresh" />
@@ -60,7 +69,7 @@ export default class Dashboard extends Component {
                     </CardBody>
                   </Card>
                 </div>
-                <div className="icon-row-item">
+                <div className="icon-row-item mb-4">
                   <Card>
                     <CardBody className="text-center">
                       <i className="iconsminds-mail-read" />
@@ -75,7 +84,7 @@ export default class Dashboard extends Component {
             </div>
           </Colxx>
         </Row>
-      </>
+      </div>
     );
   }
 }
