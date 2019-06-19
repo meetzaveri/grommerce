@@ -6,7 +6,6 @@ import {
   DropdownToggle,
   DropdownMenu
 } from 'reactstrap';
-import Icon from 'utils/Icon';
 
 import { bgHEX } from './colorConfig/index';
 import { inject, observer } from 'mobx-react';

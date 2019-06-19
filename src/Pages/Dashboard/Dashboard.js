@@ -3,6 +3,8 @@ import { inject, observer } from 'mobx-react';
 import { Row, Card, CardBody } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
+import { LineShadow } from '../../components/Charts';
+import { lineChartConfig } from 'config/chartConfig';
 
 @inject('headerStore')
 @observer
@@ -81,6 +83,9 @@ export default class Dashboard extends Component {
                   </Card>
                 </div>
               </ReactSiema>
+            </div>
+            <div className="dashboard-line-chart">
+              <LineShadow {...lineChartConfig} />
             </div>
           </Colxx>
         </Row>
