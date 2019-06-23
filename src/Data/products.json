@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Marble Cake",
-      "img": "./src/assets/img/marble-cake-thumb.jpg",
+      "img": "assets/img/marble-cake-thumb.jpg",
       "category": "Cakes",
       "createDate": "02.04.2018",
       "status": "ON HOLD",
@@ -16,7 +16,7 @@
       "id": 2,
       "name": "Fat Rascal",
       "category": "Cupcakes",
-      "img": "./src/assets/img/fat-rascal-thumb.jpg",
+      "img": "assets/img/fat-rascal-thumb.jpg",
       "createDate": "01.04.2018",
       "status": "PROCESSED",
       "statusColor": "secondary",
@@ -27,7 +27,7 @@
     {
       "id": 3,
       "name": "Chocolate Cake",
-      "img": "./src/assets/img/chocolate-cake-thumb.jpg",
+      "img": "assets/img/chocolate-cake-thumb.jpg",
       "category": "Cakes",
       "createDate": "25.03.2018",
       "status": "PROCESSED",
@@ -39,7 +39,7 @@
     {
       "id": 4,
       "name": "Goose Breast",
-      "img": "./src/assets/img/goose-breast-thumb.jpg",
+      "img": "assets/img/goose-breast-thumb.jpg",
       "category": "Cakes",
       "createDate": "21.03.2018",
       "status": "PROCESSED",
@@ -52,7 +52,7 @@
       "id": 5,
       "name": "Petit Gâteau",
       "category": "Cupcakes",
-      "img": "./src/assets/img/petit-gateau-thumb.jpg",
+      "img": "assets/img/petit-gateau-thumb.jpg",
       "createDate": "02.06.2018",
       "status": "ON HOLD",
       "statusColor": "primary",
@@ -63,7 +63,7 @@
     {
       "id": 6,
       "name": "Salzburger Nockerl",
-      "img": "./src/assets/img/salzburger-nockerl-thumb.jpg",
+      "img": "assets/img/salzburger-nockerl-thumb.jpg",
       "category": "Desserts",
       "createDate": "14.07.2018",
       "status": "PROCESSED",
@@ -75,7 +75,7 @@
     {
       "id": 7,
       "name": "Napoleonshat",
-      "img": "./src/assets/img/napoleonshat-thumb.jpg",
+      "img": "assets/img/napoleonshat-thumb.jpg",
       "category": "Desserts",
       "createDate": "05.02.2018",
       "status": "PROCESSED",
@@ -87,7 +87,7 @@
     {
       "id": 8,
       "name": "Cheesecake",
-      "img": "./src/assets/img/cheesecake-thumb.jpg",
+      "img": "assets/img/cheesecake-thumb.jpg",
       "category": "Cakes",
       "createDate": "18.08.2018",
       "status": "ON HOLD",
@@ -99,7 +99,7 @@
     {
       "id": 9,
       "name": "Financier",
-      "img": "./src/assets/img/financier-thumb.jpg",
+      "img": "assets/img/financier-thumb.jpg",
       "category": "Cakes",
       "createDate": "15.03.2018",
       "status": "ON HOLD",
@@ -111,7 +111,7 @@
     {
       "id": 10,
       "name": "Genoise",
-      "img": "./src/assets/img/genoise-thumb.jpg",
+      "img": "assets/img/genoise-thumb.jpg",
       "category": "Cupcakes",
       "createDate": "11.06.2018",
       "status": "PROCESSED",
@@ -123,7 +123,7 @@
     {
       "id": 11,
       "name": "Gingerbread",
-      "img": "./src/assets/img/gingerbread-thumb.jpg",
+      "img": "assets/img/gingerbread-thumb.jpg",
       "category": "Cakes",
       "createDate": "10.04.2018",
       "status": "ON HOLD",
@@ -135,7 +135,7 @@
     {
       "id": 12,
       "name": "Magdalena",
-      "img": "./src/assets/img/magdalena-thumb.jpg",
+      "img": "assets/img/magdalena-thumb.jpg",
       "category": "Cakes",
       "createDate": "22.07.2018",
       "status": "PROCESSED",
@@ -147,7 +147,7 @@
     {
       "id": 13,
       "name": "Parkin",
-      "img": "./src/assets/img/parkin-thumb.jpg",
+      "img": "assets/img/parkin-thumb.jpg",
       "category": "Cakes",
       "createDate": "22.08.2018",
       "status": "ON HOLD",
@@ -159,7 +159,7 @@
     {
       "id": 14,
       "name": "Streuselkuchen",
-      "img": "./src/assets/img/streuselkuchen-thumb.jpg",
+      "img": "assets/img/streuselkuchen-thumb.jpg",
       "category": "Cakes",
       "createDate": "22.07.2018",
       "status": "PROCESSED",
@@ -171,7 +171,7 @@
     {
       "id": 15,
       "name": "Tea loaf",
-      "img": "./src/assets/img/tea-loaf-thumb.jpg",
+      "img": "assets/img/tea-loaf-thumb.jpg",
       "category": "Cakes",
       "createDate": "10.09.2018",
       "status": "ON HOLD",
@@ -183,7 +183,7 @@
     {
       "id": 16,
       "name": "Merveilleux",
-      "img": "./src/assets/img/merveilleux-thumb.jpg",
+      "img": "assets/img/merveilleux-thumb.jpg",
       "category": "Cakes",
       "createDate": "18.02.2018",
       "status": "ON HOLD",
@@ -195,7 +195,7 @@
     {
       "id": 17,
       "name": "Fruitcake",
-      "img": "./src/assets/img/fruitcake-thumb.jpg",
+      "img": "assets/img/fruitcake-thumb.jpg",
       "category": "Cakes",
       "createDate": "12.01.2019",
       "status": "PROCESSED",
@@ -207,7 +207,7 @@
     {
       "id": 18,
       "name": "Bebinca",
-      "img": "./src/assets/img/bebinca-thumb.jpg",
+      "img": "assets/img/bebinca-thumb.jpg",
       "category": "Cakes",
       "createDate": "04.02.2019",
       "status": "PROCESSED",
@@ -219,7 +219,7 @@
     {
       "id": 19,
       "name": "Cremeschnitte",
-      "img": "./src/assets/img/cremeschnitte-thumb.jpg",
+      "img": "assets/img/cremeschnitte-thumb.jpg",
       "category": "Desserts",
       "createDate": "04.03.2018",
       "status": "ON HOLD",
@@ -231,7 +231,7 @@
     {
       "id": 20,
       "name": "Soufflé",
-      "img": "./src/assets/img/souffle-thumb.jpg",
+      "img": "assets/img/souffle-thumb.jpg",
       "category": "Cupcakes",
       "createDate": "16.01.2018",
       "status": "ON HOLD",
