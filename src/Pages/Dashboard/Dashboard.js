@@ -4,10 +4,10 @@ import { Row, Card, CardBody, CardTitle, NavLink, Badge } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 import { LineShadow } from '../../components/Charts';
-import { lineChartConfig } from 'config/chartConfig';
+import { lineChartConfig } from '../../config/chartConfig';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import productsData from 'Data/products.json';
-import images from '../../../assets/img/*.jpg';
+import productsData from '../../Data/products.json';
+// import images from '../../assets/img/*.jpg';
 
 const recentOrders = productsData.data.slice(0, 6);
 

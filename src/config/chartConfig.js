@@ -1,5 +1,5 @@
-import { ThemeColors } from 'Util/ThemeColors';
-import { chartTooltip, centerTextPlugin } from 'Components/Charts';
+import { ThemeColors } from 'src/Util/ThemeColors';
+import { chartTooltip, centerTextPlugin } from 'src/components/Charts';
 
 const colors = ThemeColors();
 

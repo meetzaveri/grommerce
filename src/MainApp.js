@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-import Routes from 'config/routes';
+import Routes from './config/routes';
 import { Route, Switch } from 'react-router-dom';
 
-import Header from 'components/Header';
+import Header from './components/Header';
 
-import Dashboard from 'pages/Dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 @inject('headerStore')
 @observer
