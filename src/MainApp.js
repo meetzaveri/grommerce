@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 @inject('headerStore')
 @observer

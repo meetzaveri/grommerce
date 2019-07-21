@@ -1,9 +1,21 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+  template: path.join(__dirname, 'index.html'),
+  filename: './index.html'
+});
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
+// console.log(
+//   'process.env.NODE_PATH',
+//   process.env.NODE_PATH,
+//   path.join(__dirname, 'src/index.js', path.join(__dirname, 'index.html'))
+// );
+
 module.exports = {
   context: __dirname + '/src',
-  entry: './App.js',
+  entry: path.join(__dirname, 'src/index.js'),
   output: {
     filename: 'app.js',
     path: __dirname + '/dist'
@@ -14,35 +26,33 @@ module.exports = {
       // both options are optional
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
-    })
+    }),
+    htmlWebpackPlugin
   ],
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx)$/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+          loader: 'babel-loader'
+          // options: {
+          //   presets: ['@babel/preset-react', '@babel/react', '@babel/es2015'],
+          //   plugins: [
+          //     '@babel/plugin-transform-react-jsx',
+          //     ['@babel/plugin-proposal-decorators', { legacy: true }],
+          //     ['@babel/plugin-proposal-class-properties', { loose: true }]
+          //   ]
+          // }
+        },
+        exclude: /node_modules/
       },
+
       {
         test: /\.(png|gif|jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)?/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
-          'css-loader',
-          'sass-loader'
-        ]
+        use: ['url-loader?limit=100000']
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
@@ -50,6 +60,15 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src/')
+    },
+    extensions: ['.js', '.jsx']
+  },
+  devServer: {
+    port: 8080
   },
   mode: 'development'
 };

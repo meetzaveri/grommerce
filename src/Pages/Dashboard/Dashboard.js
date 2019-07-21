@@ -6,7 +6,8 @@ import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 import { LineShadow } from '../../components/Charts';
 import { lineChartConfig } from '../../config/chartConfig';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-// import productsData from '../../Data/productsData';
+import productsData from '../../Data/products.json';
+// import images from '../../assets/img/*.jpg';
 
 // const recentOrders = productsData.data.slice(0, 6);
 

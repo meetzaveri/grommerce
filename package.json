@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
@@ -40,8 +40,11 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "scss": "^0.2.4",
+    "style-loader": "^0.23.1",
     "styled-components": "^4.1.3",
+    "url-loader": "^2.0.1",
     "utils": "^0.3.1",
+    "webpack-dev-server": "^3.7.2",
     "wrappers": "^0.2.3"
   },
   "devDependencies": {
@@ -49,10 +52,13 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0",
     "acorn": "^6.1.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "4.9.0",
     "react-chartjs-2": "^2.7.6",
