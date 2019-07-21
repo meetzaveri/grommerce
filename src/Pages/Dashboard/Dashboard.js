@@ -4,12 +4,11 @@ import { Row, Card, CardBody, CardTitle, NavLink, Badge } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 import { LineShadow } from '../../components/Charts';
-import { lineChartConfig } from 'config/chartConfig';
+import { lineChartConfig } from '../../config/chartConfig';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import productsData from 'Data/products.json';
-import images from '../../../assets/img/*.jpg';
+// import productsData from '../../Data/productsData';
 
-const recentOrders = productsData.data.slice(0, 6);
+// const recentOrders = productsData.data.slice(0, 6);
 
 @inject('headerStore')
 @observer
@@ -93,7 +92,7 @@ export default class Dashboard extends Component {
               <LineShadow {...lineChartConfig} />
             </div>
           </Colxx>
-          <Colxx lg="12" xl="6" className="mb-4">
+          {/* <Colxx lg="12" xl="6" className="mb-4">
             <Card>
               <div className="position-absolute card-top-buttons">
                 <button className="btn btn-header-light icon-button">
@@ -151,7 +150,7 @@ export default class Dashboard extends Component {
                 </div>
               </CardBody>
             </Card>
-          </Colxx>
+          </Colxx> */}
         </Row>
       </div>
     );
