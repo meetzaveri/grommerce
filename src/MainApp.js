@@ -14,8 +14,6 @@ class MainApp extends Component {
   render() {
     const { headerStore } = this.props;
 
-    console.log('main app', this.props);
-
     return (
       <div
         id="app-container"
