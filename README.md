@@ -41,6 +41,14 @@ If you own a Grocery Store which has online platform and you are also enabling t
 - Implement Apollo Server
 - Modularise Schema and Resolvers and stich them properly.
 
+## Due to some reasons, I needed to hold this project for a while. But now it's back in progress.
+
+### July 2019
+
+- Upload Images of Products to Cloudinary 
+- Show a dummy graph of Statistics happening.
+- Complete Product Creation
+
 ## Specializations
 
 As the name suggests, this ecommerce project will only allow grocery based stocks to handle. That means we are open for grocery based ecommerce stocks. Currently we are set on this, but in future we might add another domain to support more areas.
