@@ -206,8 +206,13 @@ class Header extends Component {
         </NavLink>
 
         <a className="navbar-logo" href="/">
-          <span className="logo d-none d-xs-block" />
-          <span className="logo-mobile d-block d-xs-none" />
+          {/* <span className="logo d-none d-xs-block" />
+          <span className="logo-mobile d-block d-xs-none" /> */}
+          <img
+            src="https://res.cloudinary.com/reeversedev/image/upload/v1562266145/Grommerce_dtdki6.jpg"
+            alt=""
+            className="logo"
+          />
         </a>
 
         <div className="ml-auto">
