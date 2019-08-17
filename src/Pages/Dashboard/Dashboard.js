@@ -11,13 +11,18 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
+  Badge
 } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 import { LineShadow } from '../../components/Charts';
 import { lineChartConfig } from '../../config/chartConfig';
+
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
+import { products } from '../../Data/products';
 
 @inject('headerStore')
 @observer
@@ -35,7 +40,6 @@ export default class Dashboard extends Component {
   };
 
   render() {
-    const { headerStore } = this.props;
     return (
       <div className="dashboard-wrapper">
         <Row>
@@ -97,11 +101,52 @@ export default class Dashboard extends Component {
                 </div>
               </ReactSiema>
             </div>
-            <div className="dashboard-line-chart">
-              <LineShadow {...lineChartConfig} />
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Sales</h5>
+                <div className="dashboard-line-chart">
+                  <LineShadow {...lineChartConfig} />
+                </div>
+              </div>
             </div>
           </Colxx>
-          <Colxx lg="12" xl="6">
+          <Colxx lg="12" xl="5">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Recent Orders</h5>
+                <div className="scroll dashboard-list-with-thumbs">
+                  <PerfectScrollbar>
+                    {products.map((product, index) => {
+                      return (
+                        <div className="d-flex mb-3">
+                          <a>
+                            <img src={`../../${product.img}`} alt="" />
+                            <Badge pill>{product.status}</Badge>
+                          </a>
+                          <div className="pl-3 pr-2 pt-2 pb-2">
+                            <a>
+                              <p className="list-item-heading">
+                                {product.name}
+                              </p>
+                              <div className="pr-4">
+                                <p className="text-muted text-small">
+                                  {product.description}
+                                </p>
+                              </div>
+                              <div className="text-primary text-small font-weight-medium d-none d-sm-block">
+                                {product.createDate}
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </PerfectScrollbar>
+                </div>
+              </div>
+            </div>
+          </Colxx>
+          <Colxx lg="1" xl="1">
             <button
               className="btn btn-primary"
               onClick={() => this.setState({ addProductModal: true })}
