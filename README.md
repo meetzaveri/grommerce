@@ -1,9 +1,9 @@
 <div align="center">
   <img src="https://github.com/Grommerce/grommerce-frontend/blob/development/assets/grommerce-logo.svg" height="180" width="180" />
-  <a href="https://grommerce.netlify.com/" target="_blank">Online Link</a>
 </div>
+<a href="https://grommerce.netlify.com/" target="_blank" class="text-center">Online Link</a>
 
-# Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
+# Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development) [![Netlify Status](https://api.netlify.com/api/v1/badges/2cc35b7a-d09b-4d0c-a3eb-5ee107fcb9be/deploy-status)](https://app.netlify.com/sites/grommerce/deploys)
 
 An e-commerce platform as a utlity for developers. The project is focussed on e-commerce store/warehouse handling where the store owners can manage their stuff that they are going to sell along with the orders and their customers.
 
