@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://github.com/Grommerce/grommerce-frontend/blob/development/assets/grommerce-logo.svg" height="180" width="180" />
+  <a href="https://grommerce.netlify.com/" target="_blank">Online Link</a>
 </div>
 
 # Grommerce ![build status](https://travis-ci.org/Grommerce/grommerce-frontend.svg?branch=development)
@@ -45,7 +46,7 @@ If you own a Grocery Store which has online platform and you are also enabling t
 
 ### July 2019
 
-- Upload Images of Products to Cloudinary 
+- Upload Images of Products to Cloudinary
 - Show a dummy graph of Statistics happening.
 - Complete Product Creation
 
