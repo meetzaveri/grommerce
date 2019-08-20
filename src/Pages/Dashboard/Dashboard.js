@@ -119,9 +119,17 @@ export default class Dashboard extends Component {
                     {products.map((product, index) => {
                       return (
                         <div className="d-flex mb-3">
-                          <a>
-                            <img src={`../../${product.img}`} alt="" />
-                            <Badge pill>{product.status}</Badge>
+                          <a className="position-relative">
+                            <img
+                              src={`https://gogo-react.coloredstrategies.com/${
+                                product.img
+                              }`}
+                              alt={product.name}
+                              className="list-thumbnail"
+                            />
+                            <Badge pill className="position-absolute badge-top-right">
+                              {product.status}
+                            </Badge>
                           </a>
                           <div className="pl-3 pr-2 pt-2 pb-2">
                             <a>
