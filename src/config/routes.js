@@ -1,4 +1,5 @@
-export default {
+export const routes = {
   index: '/',
-  dashboard: '/dashboard'
+  dashboard: '/dashboard',
+  productInfo: '/product/info'
 };

@@ -7,18 +7,13 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
-// console.log(
-//   'process.env.NODE_PATH',
-//   process.env.NODE_PATH,
-//   path.join(__dirname, 'src/index.js', path.join(__dirname, 'index.html'))
-// );
-
 module.exports = {
   context: __dirname + '/src',
   entry: path.join(__dirname, './src/index.js'),
   output: {
-    filename: 'app.js',
-    path: __dirname + '/dist'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    publicPath: '/'
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -35,14 +30,6 @@ module.exports = {
         test: /\.(js|jsx)$/,
         use: {
           loader: 'babel-loader'
-          // options: {
-          //   presets: ['@babel/preset-react', '@babel/react', '@babel/es2015'],
-          //   plugins: [
-          //     '@babel/plugin-transform-react-jsx',
-          //     ['@babel/plugin-proposal-decorators', { legacy: true }],
-          //     ['@babel/plugin-proposal-class-properties', { loose: true }]
-          //   ]
-          // }
         },
         exclude: /node_modules/
       },
@@ -69,7 +56,8 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   mode: 'development'
 };
