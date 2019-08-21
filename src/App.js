@@ -1,4 +1,4 @@
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import React, { Fragment } from 'react';
 
 import '../assets/css/vendor/bootstrap.min.css';
@@ -19,4 +19,4 @@ class App extends React.Component {
   }
 }
 
-export default hot(module)(App);
+export default hot(App);

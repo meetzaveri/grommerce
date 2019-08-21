@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,23 +18,19 @@
   },
   "homepage": "https://github.com/reeversedev/grommerce#readme",
   "dependencies": {
-    "apollo-boost": "^0.1.28",
-    "apollo-client": "^2.6.2",
     "assets": "^3.0.1",
     "chart.js": "^2.8.0",
     "components": "^0.1.0",
     "config": "^3.0.1",
     "containers": "0.0.1",
     "core-js": "2.6.5",
-    "graphql": "^14.3.1",
-    "graphql-tag": "^2.10.1",
     "mobx": "^5.10.1",
     "mobx-react": "^6.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-apollo": "^2.5.6",
     "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.11.0",
+    "react-hot-loader": "^4.12.9",
     "react-perfect-scrollbar": "^1.5.3",
     "react-redux": "^7.1.0",
     "react-router": "^4.3.1",
@@ -48,7 +45,6 @@
     "styled-components": "^4.1.3",
     "url-loader": "^2.0.1",
     "utils": "^0.3.1",
-    "webpack-dev-server": "^3.7.2",
     "wrappers": "^0.2.3"
   },
   "devDependencies": {
@@ -64,11 +60,12 @@
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.9.0",
     "react-chartjs-2": "^2.7.6",
     "sass": "^1.14.2",
     "sass-loader": "^7.1.0",
     "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }

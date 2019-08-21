@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Row, Card, CardBody, CardTitle, NavLink, Badge } from 'reactstrap';
+import {
+  Row,
+  Card,
+  CardBody,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Badge
+} from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 import { LineShadow } from '../../components/Charts';
 import { lineChartConfig } from '../../config/chartConfig';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import productsData from '../../Data/products.json';
-// import images from '../../assets/img/*.jpg';
 
-const recentOrders = productsData.data.slice(0, 6);
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
+import { products } from '../../Data/products';
 
 @inject('headerStore')
 @observer
@@ -27,7 +40,6 @@ export default class Dashboard extends Component {
   };
 
   render() {
-    const { headerStore } = this.props;
     return (
       <div className="dashboard-wrapper">
         <Row>
@@ -89,70 +101,169 @@ export default class Dashboard extends Component {
                 </div>
               </ReactSiema>
             </div>
-            <div className="dashboard-line-chart">
-              <LineShadow {...lineChartConfig} />
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Sales</h5>
+                <div className="dashboard-line-chart">
+                  <LineShadow {...lineChartConfig} />
+                </div>
+              </div>
             </div>
           </Colxx>
-          <Colxx lg="12" xl="6" className="mb-4">
-            <Card>
-              <div className="position-absolute card-top-buttons">
-                <button className="btn btn-header-light icon-button">
-                  <i className="simple-icon-ref" />
-                </button>
-              </div>
-              <CardBody>
-                <CardTitle>
-                  {' '}
-                  <h5 className="card-title">Recent Orders</h5>{' '}
-                </CardTitle>
+          <Colxx lg="12" xl="5">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Recent Orders</h5>
                 <div className="scroll dashboard-list-with-thumbs">
-                  <PerfectScrollbar
-                    option={{ suppressScrollX: true, wheelPropagation: false }}
-                  >
-                    {recentOrders.map((order, index) => {
+                  <PerfectScrollbar>
+                    {products.map((product, index) => {
                       return (
-                        <div key={index} className="d-flex flex-row mb-3">
-                          <NavLink
-                            to="/app/pages/details"
-                            className="d-block position-relative"
-                          >
+                        <div className="d-flex mb-3">
+                          <a className="position-relative">
                             <img
-                              src={order.img}
-                              alt={order.name}
-                              className="list-thumbnail border-0"
+                              src={`https://gogo-react.coloredstrategies.com/${
+                                product.img
+                              }`}
+                              alt={product.name}
+                              className="list-thumbnail"
                             />
-                            <Badge
-                              key={index}
-                              className="position-absolute badge-top-right"
-                              color={order.statusColor}
-                              pill
-                            >
-                              {order.status}
+                            <Badge pill className="position-absolute badge-top-right">
+                              {product.status}
                             </Badge>
-                          </NavLink>
-
-                          <div className="pl-3 pt-2 pr-2 pb-2">
-                            <NavLink to="/app/pages/details">
-                              <p className="list-item-heading">{order.name}</p>
+                          </a>
+                          <div className="pl-3 pr-2 pt-2 pb-2">
+                            <a>
+                              <p className="list-item-heading">
+                                {product.name}
+                              </p>
                               <div className="pr-4">
-                                <p className="text-muted mb-1 text-small">
-                                  {order.descrition}
+                                <p className="text-muted text-small">
+                                  {product.description}
                                 </p>
                               </div>
                               <div className="text-primary text-small font-weight-medium d-none d-sm-block">
-                                {order.createDate}
+                                {product.createDate}
                               </div>
-                            </NavLink>
+                            </a>
                           </div>
                         </div>
                       );
                     })}
                   </PerfectScrollbar>
                 </div>
-              </CardBody>
-            </Card>
+              </div>
+            </div>
+          </Colxx>
+          <Colxx lg="1" xl="1">
+            <button
+              className="btn btn-primary"
+              onClick={() => this.setState({ addProductModal: true })}
+            >
+              Add Product
+            </button>
           </Colxx>
         </Row>
+        <Modal
+          isOpen={this.state.addProductModal}
+          toggle={() =>
+            this.setState({ addProductModal: !this.state.addProductModal })
+          }
+          wrapClassName="modal-right"
+        >
+          <ModalHeader className="d-flex align-items-center">
+            Add a Product
+          </ModalHeader>
+          <ModalBody>
+            <Form>
+              <FormGroup>
+                <Label for="title">Title</Label>
+                <Input
+                  type="text"
+                  name="title"
+                  placeholder="Enter Title of the Product"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="description">Description</Label>
+                <Input
+                  name="description"
+                  type="textarea"
+                  placeholder="Enter Description of the Product"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="manufactureDate">Manufacture Date</Label>
+                <Input name="manufactureDate" type="date" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="expireDate">Expire Date</Label>
+                <Input name="expireDate" type="date" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="mrp">Maximum Retail Price (MRP)</Label>
+                <Input
+                  name="mrp"
+                  type="number"
+                  placeholder="Enter MRP of Product"
+                  min="0"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="discountPercentage">Discount Percentage</Label>
+                <Input
+                  name="discountPercentage"
+                  type="number"
+                  placeholder="Enter Discount Percentage (%) of Product"
+                  min="0"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="discountPrice">Discounted Price</Label>
+                <Input
+                  name="discountPrice"
+                  type="number"
+                  placeholder="Enter Discounted Price of Product"
+                  min="0"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="variants">Variants</Label>
+                <Input name="variants" type="select" placeholder="">
+                  <option value="" disabled className="text-muted">
+                    Enter Discounted Price of Product
+                  </option>
+                  <option value="g">Grams (g)</option>
+                  <option value="kg">Kilograms (kg)</option>
+                  <option value="ltr">Litres (ltr)</option>
+                  <option value="ml">Millilitres (ml)</option>
+                  <option value="s">Small (s)</option>
+                  <option value="m">Medium (m)</option>
+                  <option value="l">Large (l)</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="quantity">Quantity</Label>
+                <Input
+                  name="quantity"
+                  type="number"
+                  placeholder="Enter Quantity of Product in numbers"
+                  min="0"
+                />
+              </FormGroup>
+            </Form>
+          </ModalBody>
+          <ModalFooter className="d-flex justify-content-between">
+            <button
+              className="btn default"
+              onClick={() =>
+                this.setState({ addProductModal: !this.state.addProductModal })
+              }
+            >
+              Cancel
+            </button>
+            <button className="btn btn-primary">Add Product</button>
+          </ModalFooter>
+        </Modal>
       </div>
     );
   }
