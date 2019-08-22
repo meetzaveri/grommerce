@@ -18,7 +18,6 @@ import { routes } from './config/routes';
 @observer
 class MainApp extends Component {
   render() {
-    console.log(this.props);
     return (
       <div
         id="app-container"

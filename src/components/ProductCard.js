@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const ProductCard = props => {
-  console.log('props', props);
   return (
     <div className="mb-5 col-12 col-lg-6">
       <div className="flex-row listing-card-container card">
@@ -33,6 +31,15 @@ const ProductCard = props => {
   );
 };
 
-ProductCard.propTypes = {};
+ProductCard.propTypes = {
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  }
+};
 
 export default ProductCard;

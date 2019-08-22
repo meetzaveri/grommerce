@@ -8,7 +8,6 @@ export const auth = Component => {
     componentDidMount() {
       const token = localStorage.getItem('token');
       if (!token) {
-        console.log('token not available');
         this.props.history.replace(Routes.login);
       }
     }

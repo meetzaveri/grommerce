@@ -20,7 +20,6 @@ class HeaderStore {
     const currentClasses = strCurrentClasses
       ? strCurrentClasses.split(' ').filter(x => x != '')
       : '';
-    console.log('currentClasses', strCurrentClasses);
     if (!selectedMenuHasSubItems) {
       if (currentClasses.includes('menu-default') && clickIndex % 4 == 0) {
         this.menuClickCount = 1;

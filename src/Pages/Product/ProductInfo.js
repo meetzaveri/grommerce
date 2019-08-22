@@ -20,6 +20,13 @@ class ProductInfo extends Component {
               <Breadcrumb items={BreadcrumbItems} />
             </nav>
           </div>
+          <div className="col-12 mb-4">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search for Products"
+            />
+          </div>
           {products.map((product, index) => {
             return <ProductCard {...product} />;
           })}
