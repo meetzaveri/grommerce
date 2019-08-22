@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
+import ProductCard from '../../components/ProductCard';
+import { products } from '../../Data/products';
 
 const BreadcrumbItems = [
   { name: 'Home', link: '/' },
@@ -18,6 +20,9 @@ class ProductInfo extends Component {
               <Breadcrumb items={BreadcrumbItems} />
             </nav>
           </div>
+          {products.map((product, index) => {
+            return <ProductCard {...product} />;
+          })}
         </div>
       </div>
     );
