@@ -12,14 +12,14 @@ const BreadcrumbItems = [
 
 @inject('productsStore')
 @observer
-class ProductInfo extends Component {
+class AllProducts extends Component {
   render() {
     const { productsStore } = this.props;
     return (
       <div className="dashboard-wrapper">
         <div className="row">
           <div className="col-12">
-            <h1>Chocolate Cake</h1>
+            <h1>All Products</h1>
             <nav className="pt-0 breadcrumb-container d-none d-sm-block d-lg-inline-block">
               <Breadcrumb items={BreadcrumbItems} />
             </nav>
@@ -41,4 +41,4 @@ class ProductInfo extends Component {
   }
 }
 
-export default ProductInfo;
+export default AllProducts;

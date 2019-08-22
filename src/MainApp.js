@@ -11,7 +11,7 @@ import {
 import Header from './components/Header';
 
 import Dashboard from './Pages/Dashboard/Dashboard';
-import ProductInfo from './Pages/Product/ProductInfo';
+import AllProducts from './Pages/Product/AllProducts';
 import { routes } from './config/routes';
 
 @inject('headerStore')
@@ -30,7 +30,7 @@ class MainApp extends Component {
             <Switch>
               <Route exact path={routes.index} component={Dashboard} />
               <Route exact path={routes.dashboard} component={Dashboard} />
-              <Route exact path={routes.productInfo} component={ProductInfo} />
+              <Route exact path={routes.allProducts} component={AllProducts} />
 
               <Redirect to={routes.index} />
             </Switch>
