@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import ProductCard from '../../components/ProductCard';
-import { products } from '../../Data/products';
+
+import { inject, observer } from 'mobx-react';
 
 const BreadcrumbItems = [
   { name: 'Home', link: '/' },
@@ -9,8 +10,11 @@ const BreadcrumbItems = [
   { name: 'Product', link: '/product' }
 ];
 
+@inject('productsStore')
+@observer
 class ProductInfo extends Component {
   render() {
+    const { productsStore } = this.props;
     return (
       <div className="dashboard-wrapper">
         <div className="row">
@@ -25,10 +29,11 @@ class ProductInfo extends Component {
               type="text"
               className="form-control"
               placeholder="Search for Products"
+              onChange={e => productsStore.searchItems(e.target.value)}
             />
           </div>
-          {products.map((product, index) => {
-            return <ProductCard {...product} />;
+          {productsStore.searchedProducts.map((product, index) => {
+            return <ProductCard {...product} key={index} />;
           })}
         </div>
       </div>

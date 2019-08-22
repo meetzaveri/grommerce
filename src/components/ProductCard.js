@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ProductCard = props => {
   return (
@@ -32,14 +33,8 @@ const ProductCard = props => {
 };
 
 ProductCard.propTypes = {
-  name: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  }
+  name: PropTypes.string,
+  description: PropTypes.string
 };
 
 export default ProductCard;
