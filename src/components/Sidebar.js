@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, NavItem } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
-import classnames from 'classnames';
+import { Link } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { routes } from '../config/routes';
 
@@ -29,7 +28,6 @@ class Sidebar extends Component {
     this.state = {};
   }
   render() {
-    console.log('props', this.props);
     return (
       <div className="sidebar">
         <div className="main-menu">
@@ -38,19 +36,12 @@ class Sidebar extends Component {
               option={{ suppressScrollX: true, wheelPropagation: false }}
             >
               <Nav vertical className="list-unstyled">
-                {/* If menu item has no sub items. Note: If you want use hasn't sub
-                menu item : Set the menu default type to menu-sub-hidden */}
                 {sidebarItems.map((item, i) => {
                   return (
                     <NavItem key={i}>
-                      <NavLink
-                        to={item.link}
-                        onClick={e =>
-                          this.changeSelectedParentHasNoSubmenu(e, item.title)
-                        }
-                      >
+                      <Link to={item.link}>
                         <i className={item.icon} /> <span>{item.title}</span>
-                      </NavLink>
+                      </Link>
                     </NavItem>
                   );
                 })}
