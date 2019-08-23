@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const logErrorToMyService = (error, info) => {
-  console.log('Error', error, ' Info', info);
-};
-
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);

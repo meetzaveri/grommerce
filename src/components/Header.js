@@ -7,7 +7,6 @@ import {
   DropdownMenu
 } from 'reactstrap';
 
-import { bgHEX } from './colorConfig/index';
 import { inject, observer } from 'mobx-react';
 @inject('headerStore')
 @observer

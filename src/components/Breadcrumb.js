@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Breadcrumb = props => {
-  console.log('props', props);
   return (
     <ol className="breadcrumb">
       {props.items.map((item, index) => {
