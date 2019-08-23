@@ -20,7 +20,7 @@ import Sidebar from './components/Sidebar';
 class MainApp extends Component {
   render() {
     return (
-      <div id="app-container" className="menu-default sub-hidden">
+      <div id="app-container" className={this.props.headerStore.nextClasses}>
         <Header />
         <Sidebar />
         <main>

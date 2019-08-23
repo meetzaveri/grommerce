@@ -44,7 +44,7 @@ class Header extends Component {
     return setInterval(func, interval);
   };
 
-  menuButtonClick = (e, menuClickCount, containerClassnames) => {
+  menuButtonClick = (e, containerClassnames) => {
     e.preventDefault();
     setTimeout(() => {
       var event = document.createEvent('HTMLEvents');
@@ -52,7 +52,6 @@ class Header extends Component {
       window.dispatchEvent(event);
     }, 350);
     this.props.headerStore.setContainerClassnames(
-      ++menuClickCount,
       containerClassnames,
       this.props.selectedMenuHasSubItems
     );
@@ -186,10 +185,7 @@ class Header extends Component {
   };
 
   render() {
-    const {
-      containerClassnames,
-      menuClickCount
-    } = this.props.headerStore.classNames;
+    const { containerClassnames } = this.props.headerStore.classNames;
 
     return (
       <nav className="navbar fixed-top">
@@ -197,7 +193,7 @@ class Header extends Component {
           to="/"
           className="menu-button d-none d-md-block"
           onClick={e => {
-            this.menuButtonClick(e, menuClickCount, containerClassnames);
+            this.menuButtonClick(e, containerClassnames);
           }}
         >
           {/* <Icon icon="ICON_LOGO" className="icon" /> */}
@@ -209,7 +205,7 @@ class Header extends Component {
           <span className="logo-mobile d-block d-xs-none" /> */}
           <img
             src="https://res.cloudinary.com/reeversedev/image/upload/v1562266145/Grommerce_dtdki6.jpg"
-            alt=""
+            alt="Grommerce"
             className="logo"
           />
         </Link>
