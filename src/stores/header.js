@@ -6,7 +6,7 @@ class HeaderStore {
   @observable nextClasses = 'menu-default';
   @observable clickIndex = 0;
   @observable menuClickCount = 0;
-
+  @observable containerClassnames = '';
   @action
   addItem = item => {
     this.items.push(item);

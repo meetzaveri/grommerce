@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AllProducts from './Pages/Product/AllProducts';
 import { routes } from './config/routes';
+import Sidebar from './components/Sidebar';
 
 @inject('headerStore')
 @observer
@@ -21,6 +22,7 @@ class MainApp extends Component {
     return (
       <div id="app-container" className="menu-default sub-hidden">
         <Header />
+        <Sidebar />
         <main>
           <div className="container-fluid">
             {/* <Router> */}
