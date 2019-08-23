@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - "iojs"
-  - "10"
+  # Discard environment of iojs
+  # - "iojs"
+  - '8'
+  - '10'
+branches:
+  only:
+    - development
+branches:
+  except:
+    - master
