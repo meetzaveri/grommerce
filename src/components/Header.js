@@ -191,7 +191,7 @@ class Header extends Component {
       <nav className="navbar fixed-top">
         <NavLink
           to="/"
-          className="menu-button d-none d-md-block"
+          className="menu-button d-md-block"
           onClick={e => {
             this.menuButtonClick(e, containerClassnames);
           }}
