@@ -19,10 +19,7 @@ import { routes } from './config/routes';
 class MainApp extends Component {
   render() {
     return (
-      <div
-        id="app-container"
-        className="menu-default menu-sub-hidden main-hidden sub-hidden"
-      >
+      <div id="app-container" className="menu-default sub-hidden">
         <Header />
         <main>
           <div className="container-fluid">

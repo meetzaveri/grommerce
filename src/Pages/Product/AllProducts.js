@@ -3,6 +3,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import ProductCard from '../../components/ProductCard';
 
 import { inject, observer } from 'mobx-react';
+import AddProductModal from '../../components/Modals/AddProductModal';
 
 const BreadcrumbItems = [
   { name: 'Home', link: '/' },
@@ -13,6 +14,9 @@ const BreadcrumbItems = [
 @inject('productsStore')
 @observer
 class AllProducts extends Component {
+  state = {
+    addProductModal: false
+  };
   render() {
     const { productsStore } = this.props;
     return (
@@ -23,6 +27,12 @@ class AllProducts extends Component {
             <nav className="pt-0 breadcrumb-container d-none d-sm-block d-lg-inline-block">
               <Breadcrumb items={BreadcrumbItems} />
             </nav>
+            <button
+              className="btn btn-primary float-right"
+              onClick={() => this.setState({ addProductModal: true })}
+            >
+              Add Product
+            </button>
           </div>
           <div className="col-12 mb-4">
             <input
@@ -36,6 +46,12 @@ class AllProducts extends Component {
             return <ProductCard {...product} key={index} />;
           })}
         </div>
+        <AddProductModal
+          isOpen={this.state.addProductModal}
+          toggle={() =>
+            this.setState({ addProductModal: !this.state.addProductModal })
+          }
+        />
       </div>
     );
   }

@@ -204,7 +204,7 @@ class Header extends Component {
           <i className="iconsminds-align-justify-all" />
         </NavLink>
 
-        <a className="navbar-logo" href="/">
+        <Link className="navbar-logo" to="/">
           {/* <span className="logo d-none d-xs-block" />
           <span className="logo-mobile d-block d-xs-none" /> */}
           <img
@@ -212,7 +212,7 @@ class Header extends Component {
             alt=""
             className="logo"
           />
-        </a>
+        </Link>
 
         <div className="ml-auto">
           <div className="header-icons d-inline-block align-middle">
