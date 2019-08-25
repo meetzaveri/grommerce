@@ -17,6 +17,14 @@ class AllProducts extends Component {
   state = {
     addProductModal: false
   };
+  debouncedSearch = (func, delay) => {
+    clearTimeout(timerId);
+    let timerId = setTimeout(func, delay);
+  };
+  search = searchItem => {
+    const { productsStore } = this.props;
+    return productsStore.searchItems(searchItem);
+  };
   render() {
     const { productsStore } = this.props;
     return (
@@ -39,7 +47,9 @@ class AllProducts extends Component {
               type="text"
               className="form-control"
               placeholder="Search for Products"
-              onChange={e => productsStore.searchItems(e.target.value)}
+              onChange={e =>
+                this.debouncedSearch(() => this.search(e.target.value), 5000)
+              }
             />
           </div>
           {productsStore.searchedProducts.map((product, index) => {
