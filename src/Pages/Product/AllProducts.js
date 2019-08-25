@@ -4,6 +4,7 @@ import ProductCard from '../../components/ProductCard';
 
 import { inject, observer } from 'mobx-react';
 import AddProductModal from '../../components/Modals/AddProductModal';
+import { debouncedSearch } from '../../Util/Utils';
 
 const BreadcrumbItems = [
   { name: 'Home', link: '/' },
@@ -15,15 +16,28 @@ const BreadcrumbItems = [
 @observer
 class AllProducts extends Component {
   state = {
-    addProductModal: false
-  };
-  debouncedSearch = (func, delay) => {
-    clearTimeout(timerId);
-    let timerId = setTimeout(func, delay);
+    isLoading: false,
+    addProductModal: false,
+    search: ''
   };
   search = searchItem => {
     const { productsStore } = this.props;
+    this.setState({
+      isLoading: false
+    });
     return productsStore.searchItems(searchItem);
+  };
+
+  onSearch = value => {
+    this.setState(
+      {
+        search: value,
+        isLoading: true
+      },
+      () => {
+        debouncedSearch(() => this.search(this.state.search), 1200);
+      }
+    );
   };
   render() {
     const { productsStore } = this.props;
@@ -47,14 +61,21 @@ class AllProducts extends Component {
               type="text"
               className="form-control"
               placeholder="Search for Products"
-              onChange={e =>
-                this.debouncedSearch(() => this.search(e.target.value), 5000)
-              }
+              onChange={e => this.onSearch(e.target.value)}
             />
           </div>
-          {productsStore.searchedProducts.map((product, index) => {
-            return <ProductCard {...product} key={index} />;
-          })}
+          {/* If state is loading, i.e., if the request has gone for searching */}
+          {this.state.isLoading ? (
+            <div className="loading" />
+          ) : productsStore.searchedProducts.length > 0 ? (
+            productsStore.searchedProducts.map((product, index) => {
+              return <ProductCard {...product} key={index} />;
+            })
+          ) : (
+            <div className="col-12">
+              <p className="text-justify font-weight-bold">No results found</p>
+            </div>
+          )}
         </div>
         <AddProductModal
           isOpen={this.state.addProductModal}

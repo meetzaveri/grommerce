@@ -42,3 +42,8 @@ export const addCommas = nStr => {
   }
   return x1 + x2;
 };
+
+export const debouncedSearch = (func, delay) => {
+  clearTimeout(timerId);
+  let timerId = setTimeout(func, delay);
+};
