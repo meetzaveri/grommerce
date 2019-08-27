@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-import {
-  Route,
-  Switch,
-  Redirect,
-  BrowserRouter as Router
-} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
+// Components
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 
+// Pages
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AllProducts from './Pages/Product/AllProducts';
+import ProductInfo from './Pages/Product/ProductInfo';
+
 import { routes } from './config/routes';
-import Sidebar from './components/Sidebar';
 
 @inject('headerStore')
 @observer
@@ -30,6 +29,7 @@ class MainApp extends Component {
               <Route exact path={routes.index} component={Dashboard} />
               <Route exact path={routes.dashboard} component={Dashboard} />
               <Route exact path={routes.allProducts} component={AllProducts} />
+              <Route exact path={routes.productInfo} component={ProductInfo} />
 
               <Redirect to={routes.index} />
             </Switch>

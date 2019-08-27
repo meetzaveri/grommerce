@@ -1,5 +1,6 @@
 export const routes = {
   index: '/',
   dashboard: '/dashboard',
-  allProducts: '/product/all'
+  allProducts: '/product/all',
+  productInfo: '/product/:id/info'
 };
