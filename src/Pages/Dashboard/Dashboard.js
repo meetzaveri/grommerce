@@ -16,6 +16,7 @@ import {
 } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
+import { Link } from 'react-router-dom';
 import { LineShadow } from '../../components/Charts';
 import { lineChartConfig } from '../../config/chartConfig';
 
@@ -23,6 +24,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import { products } from '../../Data/products';
+import { routes } from '../../config/routes';
 
 @inject('headerStore')
 @observer
@@ -119,11 +121,12 @@ export default class Dashboard extends Component {
                     {products.map((product, index) => {
                       return (
                         <div className="d-flex mb-3">
-                          <a className="position-relative">
+                          <Link
+                            className="position-relative"
+                            to={routes.productInfo.replace(':id', product.id)}
+                          >
                             <img
-                              src={`https://gogo-react.coloredstrategies.com/${
-                                product.img
-                              }`}
+                              src={`https://gogo-react.coloredstrategies.com/${product.img}`}
                               alt={product.name}
                               className="list-thumbnail"
                             />
@@ -133,9 +136,11 @@ export default class Dashboard extends Component {
                             >
                               {product.status}
                             </Badge>
-                          </a>
+                          </Link>
                           <div className="pl-3 pr-2 pt-2 pb-2">
-                            <a>
+                            <Link
+                              to={routes.productInfo.replace(':id', product.id)}
+                            >
                               <p className="list-item-heading">
                                 {product.name}
                               </p>
@@ -147,7 +152,7 @@ export default class Dashboard extends Component {
                               <div className="text-primary text-small font-weight-medium d-none d-sm-block">
                                 {product.createDate}
                               </div>
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       );
