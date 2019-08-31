@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import { NavItem, NavLink } from 'reactstrap';
 
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 import { products } from '../../Data/products';
+import { SmallLineChart } from '../../components/Charts';
+import {
+  smallChartData1,
+  smallChartData2,
+  smallChartData3,
+  smallChartData4
+} from '../../config/chartConfig';
 
 const ProductInfo = props => {
   const [activeTab, setActiveTab] = useState('details');
@@ -119,7 +129,13 @@ const ProductInfo = props => {
                                 <div className="mb-0 card-title">
                                   Order Status
                                 </div>
-                                <div className="progress-bar-circle"></div>
+                                <div className="progress-bar-circle">
+                                  <CircularProgressbar
+                                    strokeWidth={5}
+                                    value={85}
+                                    text={'85%'}
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -130,56 +146,28 @@ const ProductInfo = props => {
                           <div className="mb-4 col-6">
                             <div className="dashboard-small-chart-analytics card">
                               <div className="card-body">
-                                <div>
-                                  <p className="lead color-theme-1 mb-1 value">
-                                    ${p.sales}
-                                  </p>
-                                  <p className="mb-0 label text-small">
-                                    Total Orders-Mon
-                                  </p>
-                                </div>
+                                <SmallLineChart {...smallChartData1} />
                               </div>
                             </div>
                           </div>
                           <div className="mb-4 col-6">
                             <div className="dashboard-small-chart-analytics card">
                               <div className="card-body">
-                                <div>
-                                  <p className="lead color-theme-1 mb-1 value">
-                                    $115
-                                  </p>
-                                  <p className="mb-0 label text-small">
-                                    Pending Orders
-                                  </p>
-                                </div>
+                                <SmallLineChart {...smallChartData2} />
                               </div>
                             </div>
                           </div>
                           <div className="mb-4 col-6">
                             <div className="dashboard-small-chart-analytics card">
                               <div className="card-body">
-                                <div>
-                                  <p className="lead color-theme-1 mb-1 value">
-                                    $350
-                                  </p>
-                                  <p className="mb-0 label text-small">
-                                    Total Orders-Mon
-                                  </p>
-                                </div>
+                                <SmallLineChart {...smallChartData3} />
                               </div>
                             </div>
                           </div>
                           <div className="mb-4 col-6">
                             <div className="dashboard-small-chart-analytics card">
                               <div className="card-body">
-                                <div>
-                                  <p className="lead color-theme-1 mb-1 value">
-                                    $200
-                                  </p>
-                                  <p className="mb-0 label text-small">
-                                    Total Orders-Mon
-                                  </p>
-                                </div>
+                                <SmallLineChart {...smallChartData4} />
                               </div>
                             </div>
                           </div>
