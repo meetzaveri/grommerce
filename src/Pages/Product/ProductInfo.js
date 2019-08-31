@@ -40,7 +40,7 @@ const ProductInfo = props => {
                     className={activeTab === 'details' ? 'active' : null}
                     onClick={() => setActiveTab('details')}
                   >
-                    Details
+                    <span> Details</span>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -48,7 +48,7 @@ const ProductInfo = props => {
                     className={activeTab === 'orders' ? 'active' : null}
                     onClick={() => setActiveTab('orders')}
                   >
-                    Orders
+                    <span>Orders</span>
                   </NavLink>
                 </NavItem>
               </ul>
@@ -188,7 +188,34 @@ const ProductInfo = props => {
                     </div>
                   </div>
                 </div>
-              ) : null}
+              ) : (
+                <div className="tab-content">
+                  <div className="row">
+                    <div className="col">
+                      <div className="d-flex flex-row mb-3 card">
+                        <div className="d-flex flex-grow-1 min-width-zero">
+                          <div className="align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center card-body">
+                            <a className="list-item-heading mb-1 truncate w-40 w-xs-100">
+                              Marty Otte
+                            </a>
+                            <p className="mb-1 text-muted text-small w-15 w-xs-100">
+                              Kansas City, USA
+                            </p>
+                            <p className="mb-1 text-muted text-small w-15 w-xs-100">
+                              02.01.2019
+                            </p>
+                            <div className="w-15 w-xs-100 text-right">
+                              <span className="badge badge-secondary badge-pill text-uppercase">
+                                On Hold
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         );
