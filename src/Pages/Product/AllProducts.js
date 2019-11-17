@@ -6,11 +6,29 @@ import { inject, observer } from 'mobx-react';
 import AddProductModal from '../../components/Modals/AddProductModal';
 import { debouncedSearch } from '../../Util/Utils';
 
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+
 const BreadcrumbItems = [
   { name: 'Home', link: '/' },
   { name: 'Pages', link: '/pages' },
   { name: 'Product', link: '/product' }
 ];
+
+const GET_PRODUCTS = gql`
+  {
+    allProducts {
+      nodes {
+        name
+        quantity
+        company: companyByCompanyId {
+          name
+          email
+        }
+      }
+    }
+  }
+`;
 
 @inject('productsStore')
 @observer
@@ -42,48 +60,51 @@ class AllProducts extends Component {
   render() {
     const { productsStore } = this.props;
     return (
-      <div className="dashboard-wrapper">
-        <div className="row">
-          <div className="col-12">
-            <h1>All Products</h1>
-            <nav className="pt-0 breadcrumb-container d-none d-sm-block d-lg-inline-block">
-              <Breadcrumb items={BreadcrumbItems} />
-            </nav>
-            <button
-              className="btn btn-primary float-right"
-              onClick={() => this.setState({ addProductModal: true })}
-            >
-              Add Product
-            </button>
-          </div>
-          <div className="col-12 mb-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search for Products"
-              onChange={e => this.onSearch(e.target.value)}
-            />
-          </div>
-          {/* If state is loading, i.e., if the request has gone for searching */}
-          {this.state.isLoading ? (
-            <div className="loading" />
-          ) : productsStore.searchedProducts.length > 0 ? (
-            productsStore.searchedProducts.map((product, index) => {
-              return <ProductCard {...product} key={index} />;
-            })
-          ) : (
-            <div className="col-12">
-              <p className="text-justify font-weight-bold">No results found</p>
+      <Query query={GET_PRODUCTS}>
+        {({ loading, error, data }) => {
+          if (loading) return 'Loading...';
+          if (error) return `Error! ${error.message}`;
+
+          return (
+            <div className="dashboard-wrapper">
+              <div className="row">
+                <div className="col-12">
+                  <h1>All Products</h1>
+                  <nav className="pt-0 breadcrumb-container d-none d-sm-block d-lg-inline-block">
+                    <Breadcrumb items={BreadcrumbItems} />
+                  </nav>
+                  <button
+                    className="btn btn-primary float-right"
+                    onClick={() => this.setState({ addProductModal: true })}
+                  >
+                    Add Product
+                  </button>
+                </div>
+                <div className="col-12 mb-4">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search for Products"
+                    onChange={e => this.onSearch(e.target.value)}
+                  />
+                </div>
+                {/* If state is loading, i.e., if the request has gone for searching */}
+                {data.allProducts.nodes.map(product => (
+                  <ProductCard {...product} />
+                ))}
+              </div>
+              <AddProductModal
+                isOpen={this.state.addProductModal}
+                toggle={() =>
+                  this.setState({
+                    addProductModal: !this.state.addProductModal
+                  })
+                }
+              />
             </div>
-          )}
-        </div>
-        <AddProductModal
-          isOpen={this.state.addProductModal}
-          toggle={() =>
-            this.setState({ addProductModal: !this.state.addProductModal })
-          }
-        />
-      </div>
+          );
+        }}
+      </Query>
     );
   }
 }

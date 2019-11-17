@@ -15,7 +15,7 @@ const ProductCard = props => {
               className="card-img-left"
             />
             <span className="position-absolute badge-top-left badge badge-primary badge-pill">
-              {props.status}
+              {props.quantity}
             </span>
           </Link>
         </div>
