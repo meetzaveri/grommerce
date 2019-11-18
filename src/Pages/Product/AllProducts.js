@@ -95,7 +95,7 @@ class AllProducts extends Component {
                 </div>
                 {/* If state is loading, i.e., if the request has gone for searching */}
                 {data.allProducts.nodes.map(product => (
-                  <ProductCard {...product} />
+                  <ProductCard {...product} key={product.id} />
                 ))}
               </div>
               <AddProductModal

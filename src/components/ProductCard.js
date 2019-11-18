@@ -42,8 +42,13 @@ const ProductCard = ({
 };
 
 ProductCard.propTypes = {
+  id: PropTypes.string,
+  img: PropTypes.string,
+  description: PropTypes.string,
+  discounted_price: PropTypes.number,
+  mrp: PropTypes.number,
   name: PropTypes.string,
-  description: PropTypes.string
+  quantity: PropTypes.number
 };
 
 export default ProductCard;
