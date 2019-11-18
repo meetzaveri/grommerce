@@ -19,8 +19,13 @@ const GET_PRODUCTS = gql`
   {
     allProducts {
       nodes {
+        id
         name
         quantity
+        img: imageUrl
+        mrp: marketPrice
+        discounted_price: discountedPrice
+        description: productDescription
         company: companyByCompanyId {
           name
           email

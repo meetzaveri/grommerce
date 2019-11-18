@@ -3,30 +3,37 @@ import PropTypes from 'prop-types';
 import { routes } from '../config/routes';
 import { Link } from 'react-router-dom';
 
-const ProductCard = props => {
+const ProductCard = ({
+  id,
+  img,
+  description,
+  discounted_price,
+  mrp,
+  name,
+  quantity
+}) => {
   return (
     <div className="mb-5 col-12 col-lg-6">
       <div className="flex-row listing-card-container card">
         <div className="w-40 position-relative">
-          <Link to={routes.productInfo.replace(':id', props.id)}>
-            <img
-              src={`https://gogo-react.coloredstrategies.com/${props.img}`}
-              alt={props.description}
-              className="card-img-left"
-            />
-            <span className="position-absolute badge-top-left badge badge-primary badge-pill">
-              {props.quantity}
+          <Link to={routes.productInfo.replace(':id', id)}>
+            <img src={img} alt={description} className="card-img-left" />
+            <span className="position-absolute badge-top-left badge badge-danger badge-pill">
+              <strike>&#8377; {mrp}</strike>
+            </span>
+            <span className="position-absolute badge-top-left-2 badge badge-danger badge-pill">
+              &#8377; {discounted_price}
             </span>
           </Link>
         </div>
         <div className="w-60 d-flex align-items-center">
           <div className="card-body">
-            <Link to={routes.productInfo.replace(':id', props.id)}>
-              <h5 className="listing-heading">{props.name}</h5>
-              <br />
-              <span />
+            <Link to={routes.productInfo.replace(':id', id)}>
+              <h5 className="listing-heading">{name}</h5>
+              <span className="text-muted">{quantity} units</span>
             </Link>
-            <p>{props.description}</p>
+            <br />
+            <p className="mt-2">{description}</p>
           </div>
         </div>
       </div>
