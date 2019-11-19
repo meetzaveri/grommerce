@@ -13,9 +13,13 @@ const sidebarItems = [
     icon: 'simple-icon-grid'
   },
   {
+    link: routes.allCompanies,
+    title: 'All Companies',
+    icon: 'iconsminds-building'
+  },
+  {
     link: routes.allProducts,
     title: 'All Products',
-    showStatus: ['active'],
     icon: 'iconsminds-shop-3'
   }
 ];
