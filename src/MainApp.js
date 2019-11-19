@@ -14,6 +14,7 @@ import ProductInfo from './Pages/Product/ProductInfo';
 
 import { routes } from './config/routes';
 import AllCompanies from './Pages/Company/AllCompanies';
+import CompanyInfo from './Pages/Company/CompanyInfo';
 
 @inject('headerStore')
 @observer
@@ -36,6 +37,7 @@ class MainApp extends Component {
                 component={AllCompanies}
               />
               <Route exact path={routes.productInfo} component={ProductInfo} />
+              <Route exact path={routes.companyInfo} component={CompanyInfo} />
 
               <Redirect to={routes.index} />
             </Switch>

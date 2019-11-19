@@ -8,15 +8,14 @@ const CompanyCard = ({ id, img, description, name, quantity }) => {
     <div className="mb-5 col-12 col-lg-6">
       <div className="flex-row listing-card-container card">
         <div className="w-40 position-relative">
-          <Link to={routes.productInfo.replace(':id', id)}>
+          <Link to={routes.companyInfo.replace(':id', id)}>
             <img src={img} alt={description} className="card-img-left" />
           </Link>
         </div>
         <div className="w-60 d-flex align-items-center">
           <div className="card-body">
-            <Link to={routes.productInfo.replace(':id', id)}>
+            <Link to={routes.companyInfo.replace(':id', id)}>
               <h5 className="listing-heading">{name}</h5>
-              <span className="text-muted">{quantity} units</span>
             </Link>
             <br />
             <p className="mt-2">{description}</p>
