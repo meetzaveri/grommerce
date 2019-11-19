@@ -13,6 +13,7 @@ import AllProducts from './Pages/Product/AllProducts';
 import ProductInfo from './Pages/Product/ProductInfo';
 
 import { routes } from './config/routes';
+import AllCompanies from './Pages/Company/AllCompanies';
 
 @inject('headerStore')
 @observer
@@ -29,6 +30,11 @@ class MainApp extends Component {
               <Route exact path={routes.index} component={Dashboard} />
               <Route exact path={routes.dashboard} component={Dashboard} />
               <Route exact path={routes.allProducts} component={AllProducts} />
+              <Route
+                exact
+                path={routes.allCompanies}
+                component={AllCompanies}
+              />
               <Route exact path={routes.productInfo} component={ProductInfo} />
 
               <Redirect to={routes.index} />
