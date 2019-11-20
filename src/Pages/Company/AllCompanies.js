@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import CompanyCard from '../../components/CompanyCard';
 
-import { inject, observer } from 'mobx-react';
 import AddProductModal from '../../components/Modals/AddProductModal';
 import { debouncedSearch } from '../../Util/Utils';
 
@@ -36,7 +35,6 @@ class AllCompanies extends Component {
     addProductModal: false,
     search: ''
   };
-  search = searchItem => {};
 
   onSearch = value => {
     this.setState(
