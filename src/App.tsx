@@ -1,5 +1,5 @@
 import { hot } from 'react-hot-loader/root';
-import React, { Fragment } from 'react';
+import * as React from 'react';
 
 import '../assets/css/vendor/bootstrap.min.css';
 import '../assets/css/sass/themes/gogo.light.blue.scss';
@@ -10,18 +10,16 @@ import headerStore from './stores/header';
 import productsStore from './stores/products';
 import MainApp from './MainApp';
 
-class App extends React.Component {
-  render() {
-    const stores = {
-      headerStore: headerStore,
-      productsStore: productsStore
-    };
-    return (
-      <Provider {...stores}>
-        <MainApp />
-      </Provider>
-    );
-  }
-}
+const App = () => {
+  const stores = {
+    headerStore: headerStore,
+    productsStore: productsStore
+  };
+  return (
+    <Provider {...stores}>
+      <MainApp />
+    </Provider>
+  );
+};
 
 export default hot(App);

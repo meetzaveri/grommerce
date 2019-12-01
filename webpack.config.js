@@ -9,7 +9,8 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: __dirname + '/src',
-  entry: path.join(__dirname, './src/index.js'),
+  entry: path.join(__dirname, './src/index.tsx'),
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -26,6 +27,11 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.(js|jsx)$/,
         use: {
@@ -52,7 +58,7 @@ module.exports = {
     alias: {
       src: path.resolve(__dirname, 'src/')
     },
-    extensions: ['.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   devServer: {
     port: 8080,
